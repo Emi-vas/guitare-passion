@@ -1,0 +1,57 @@
+.Home .guide {
+    position: relative;
+    height: 100vh;
+
+
+    img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    & .bloc_txt {
+        position: absolute;
+        z-index: 2;
+        bottom: 15px;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        color: white;
+        background: #04455b9d;
+        border-radius: 50%;
+        backdrop-filter: blur(7px);
+        
+        width: 55%;
+        height: 80%;
+
+        transform: translateX(200px);
+        animation: arriveBlocText 0.7s 0.5s both;
+        @keyframes arriveBlocText {
+            from { transform: translateX(500px); }
+        }
+
+        h1 {
+            font-size: 4em;
+            text-align: left;
+            font-weight: 400;
+            padding-left: 5%;
+            transition: all 0.4s;
+        }
+        p {
+            padding-left: 20%;
+            font-size: 1.4em;
+            letter-spacing: 0.1em;
+        }
+
+        .btn {
+            margin-left: 40%;
+            margin-top: 50px;
+        }
+    }
+}
