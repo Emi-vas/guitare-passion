@@ -3,7 +3,6 @@
     top: 0;
     width: 100%;
     z-index: 3;
-
     color: white;
 
     nav {
@@ -37,6 +36,24 @@
             &::after {
                 opacity: 0.9;
                 transform:  translateY(110%) rotate(0.5turn) scale(1);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        nav {
+            width: 60%;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        font-size: 0.9em;
+    }
+    @media screen and (max-width: 1000px) {
+        nav {
+            width: 100%;
+            justify-content: flex-start;
+            a {
+                margin: 0 15px;
             }
         }
     }

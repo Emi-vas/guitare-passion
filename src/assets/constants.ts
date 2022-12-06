@@ -1,3 +1,3 @@
 export const BREAKPOINTS = {
-    tel: 500
+    tel: 650
 }

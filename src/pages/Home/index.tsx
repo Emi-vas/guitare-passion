@@ -20,6 +20,14 @@ const Guide = () => {
     const isTel = isTelFct()
     const [animTitle, setAnimTitle] = useState("")
 
+    const translateTitle = () => {
+        if(window.innerWidth > 700) {
+            return "translateX(100px)"
+        } else {
+            return "translateX(50px)"
+        }
+    }
+
     return(
         <div className="guide">
              <img 
@@ -35,7 +43,7 @@ const Guide = () => {
                 </p>
                 <button 
                     className=" btn btn-1"
-                    onMouseEnter={()=> setAnimTitle("translateX(100px)")}
+                    onMouseEnter={()=> setAnimTitle(translateTitle)}
                     onMouseLeave={()=> setAnimTitle("translateX(0)")}
                 >Suivre le guide</button>
             </div>
