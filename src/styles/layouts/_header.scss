@@ -1,0 +1,43 @@
+.Header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+
+    color: white;
+
+    nav {
+        padding: 10px 0;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    a {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        font-size: 1.3em;
+        &::after {
+            transition: all 0.3s;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            transform:  translateY(170%) rotate(0turn) scale(0);
+            opacity: 0;
+            width: 45px;
+            height: 45px;
+            background: url("../assets/pic.png");
+            background-size: contain;
+            z-index: 3;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 0.9;
+                transform:  translateY(110%) rotate(0.5turn) scale(1);
+            }
+        }
+    }
+}

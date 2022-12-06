@@ -1,7 +1,6 @@
 .Home .guide {
     position: relative;
-    height: 100vh;
-
+    height: 80vh;
 
     img {
         position: absolute;
@@ -27,8 +26,8 @@
         border-radius: 50%;
         backdrop-filter: blur(7px);
         
-        width: 55%;
-        height: 80%;
+        width: 50%;
+        height: 87%;
 
         transform: translateX(200px);
         animation: arriveBlocText 0.7s 0.5s both;
@@ -45,7 +44,7 @@
         }
         p {
             padding-left: 20%;
-            font-size: 1.4em;
+            font-size: 1.3em;
             letter-spacing: 0.1em;
         }
 

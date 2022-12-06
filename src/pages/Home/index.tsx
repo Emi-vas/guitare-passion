@@ -1,11 +1,13 @@
 import { useState } from "react";
+import Header from "../../components/Header";
 import { isTelFct } from "../../helper/isTel";
 
 const Home = () => {
 
     return (
         <div className="Home">
-           <Guide />
+            <Header />
+            <Guide />
         </div>
     );
 };
