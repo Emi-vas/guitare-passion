@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import Header from "../../components/Header";
 import { isTelFct } from "../../helper/isTel";
 
@@ -55,19 +56,23 @@ const Categories = () => {
     const categoriesListe = [
         {
             name: 'Amplis',
-            img: "./images/cate-ampli.jpg"
+            img: "./images/cate-ampli.jpg",
+            link: "/amplis"
         },
         {
             name: 'Electriques',
-            img: "./images/cate-electriques.jpg"
+            img: "./images/cate-electriques.jpg",
+            link: "/guitares-electriques"
         },
         {
             name: 'Acoustiques',
-            img: "./images/cate-acoustiques.jpg"
+            img: "./images/cate-acoustiques.jpg",
+            link: "/guitares-acoustiques"
         },
         {
             name: 'Accessoires',
-            img: "./images/cate-accessoires.jpg"
+            img: "./images/cate-accessoires.jpg",
+            link: "/accessoires"
         },
     ]
 
@@ -75,11 +80,11 @@ const Categories = () => {
         <div className="Home categories">
             {
                 categoriesListe.map(categorie => (
-                    <a key={categorie.name} className="categorie">
+                    <Link to={categorie.link} key={categorie.name} className="categorie">
                         <img src={categorie.img} alt={categorie.name} className="bg" />
                         <h3>{categorie.name}</h3>
                         <img className="pic" src="./images/pic-cate.png" alt="médiator" />
-                    </a>
+                    </Link>
                 ))
             }
         </div>

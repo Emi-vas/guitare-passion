@@ -1,0 +1,23 @@
+.Page.top_section {
+
+    position: relative;
+    height: 150px;
+    background: $blue-dark;
+    background: url("./assets/header-bg.svg");
+
+    h1 {
+        color: white;
+        position: absolute;
+        bottom: 15px;
+        right: 0px;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        transform: translateX(70px);
+        animation: topSectionTitle 0.4s both;
+        @keyframes topSectionTitle {
+            to {
+                transform: translateX(-70px);
+            }
+        }
+    }
+}

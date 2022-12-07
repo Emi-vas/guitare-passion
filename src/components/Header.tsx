@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 
 const Header = () => {
-    const [displayHeader, setDisplayHeader] = useState(false)
+    const [displayHeader, setDisplayHeader] = useState(true)
 
     useEffect(() => {
         console.log(window.innerWidth)
@@ -34,18 +35,19 @@ const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
             <div className="cross" onClick={() => setDisplayHeader(false)}>&times;</div>
             <nav>
                 <div className="blocLien">
-                    <a href="">Guitare électriques</a>
+                    <Link to="/guitares-electriques" >Guitare électriques</Link>
                 </div>
                 <div className="blocLien">
-                    <a href="">Guitare acoustiques</a>
+                    <Link to="/guitares-acoustiques" >Guitare acoustiques</Link>
                 </div>
                 <div className="blocLien">
-                    <a href="">Amplis</a>
+                    <Link to="/amplis" >Amplis</Link>
                 </div>
                 <div className="blocLien">
-                    <a href="">Accessoires</a>
+                    <Link to="/accessoires" >Accessoires</Link>
                 </div>
             </nav>
+          
         </div>
     )
 }
