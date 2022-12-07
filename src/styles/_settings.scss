@@ -33,6 +33,19 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    @media screen and (max-width: 1000px) {
+        font-size: 2.5em;
+    }
+    @media screen and (max-width: 650px) {
+        font-size: 1.7em;
+    }
+}
+
 button {
     font-family: $p;
     border: none;
@@ -55,8 +68,8 @@ button {
     letter-spacing: 0.1em;
 
     @media screen and (max-width: 650px) {
-        padding: 15px 20px;
-        font-size: 1em;
+        padding: 12px 17px;
+        font-size: 0.9em;
     }
 }
 

@@ -8,13 +8,13 @@ const Home = () => {
         <div className="Home">
             <Header />
             <Guide />
+            <h2>Nos catégories</h2>
+            <Categories />
         </div>
     );
 };
 
 export default Home;
-
-
 
 const Guide = () => {
     const isTel = isTelFct()
@@ -47,6 +47,41 @@ const Guide = () => {
                     onMouseLeave={()=> setAnimTitle("translateX(0)")}
                 >Suivre le guide</button>
             </div>
+        </div>
+    )
+}
+
+const Categories = () => {
+    const categoriesListe = [
+        {
+            name: 'Amplis',
+            img: "./images/cate-ampli.jpg"
+        },
+        {
+            name: 'Electriques',
+            img: "./images/cate-electriques.jpg"
+        },
+        {
+            name: 'Acoustiques',
+            img: "./images/cate-acoustiques.jpg"
+        },
+        {
+            name: 'Accessoires',
+            img: "./images/cate-accessoires.jpg"
+        },
+    ]
+
+    return(
+        <div className="Home categories">
+            {
+                categoriesListe.map(categorie => (
+                    <a key={categorie.name} className="categorie">
+                        <img src={categorie.img} alt={categorie.name} className="bg" />
+                        <h3>{categorie.name}</h3>
+                        <img className="pic" src="./images/pic-cate.png" alt="médiator" />
+                    </a>
+                ))
+            }
         </div>
     )
 }
