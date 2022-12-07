@@ -19,7 +19,7 @@ p {
     letter-spacing: 0.1em;
 }
 
-body {
+body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -53,6 +53,11 @@ button {
     padding: 20px 30px;
     border-radius: 7px;
     letter-spacing: 0.1em;
+
+    @media screen and (max-width: 650px) {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
 }
 
 .btn-1 {

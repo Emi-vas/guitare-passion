@@ -4,6 +4,9 @@
     width: 100%;
     z-index: 3;
     color: white;
+    & .cross {
+        display: none;
+    }
 
     nav {
         padding: 10px 0;
@@ -57,4 +60,72 @@
             }
         }
     }
+}
+
+/* On tel  */
+@media screen and (max-width: 650px) {
+    .Header {
+        bottom: 0;
+        background: $blue-dark;
+        width: auto;
+        padding-top: 40px;
+        padding-right: 30px;
+
+        animation: HeaderArrive 0.7s both;
+        @keyframes HeaderArrive {
+            from {
+                transform: translateX(-300px);
+            }
+        }
+
+        & .cross {
+            display: block;
+            position: absolute;
+            font-size: 3em;
+            top: 0;
+            right: 20px;
+            cursor: pointer;
+
+            animation: crossArrive 0.7s 0.7s both;
+            @keyframes crossArrive {
+                from {
+                    transform:  translateX(-150px) rotate(0.5turn);
+                    opacity: 0;
+                }
+            }
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 0.9em;
+
+            a {
+                margin: 30px 55px;
+                justify-content: flex-start;
+                &::after {
+                    transform: rotate(0.5turn) translateY(-15%) translateX(100%);
+                    opacity: 0.9;
+                }
+
+                &:hover {
+                    &::after {
+                        transform: rotate(0.5turn) translateY(-15%) translateX(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.headerTelIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    color: white;
+    background: rgba(0, 0, 0, 0.302);
+    font-size: 1.7em;
+    padding: 10px;
+    cursor: pointer;
 }
