@@ -1,0 +1,1 @@
+export type Categorie = "accessoires" | "guitares-acoustiques" | "guitares-electriques" | "amplis"

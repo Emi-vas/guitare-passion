@@ -5,9 +5,7 @@ const index = () => {
     return (
         <div>
             <Header />
-            <div className='Page top_section '>
-                <h1>Amplis</h1>
-            </div>
+            
         </div>
     );
 };

@@ -42,14 +42,20 @@
             }
         }
     }
+    @media screen and (max-width: 1500px) {
+        font-size: 0.9em;
+        nav {
+            width: 50%;
+        }
+    }
 
     @media screen and (max-width: 1400px) {
         nav {
-            width: 60%;
+            width: 70%;
         }
     }
     @media screen and (max-width: 1200px) {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
     @media screen and (max-width: 1000px) {
         nav {

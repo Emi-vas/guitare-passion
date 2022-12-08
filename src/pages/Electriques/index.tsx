@@ -1,15 +1,22 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
+import CategoriesMain from '../../components/CategoriesMain';
 import Header from '../../components/Header';
 
-const index = () => {
+const Electriques = () => {
+
+    useEffect(() => {
+        axios
+        .get("./fakeBdd/articles/electric-guitar.json")
+        .then(res => console.log(res.data))
+    }, [])
+
     return (
         <div>
             <Header />
-            <div className='Page top_section '>
-                <h1>Guitares éléctriques</h1>
-            </div>
+            <CategoriesMain title='Guitares électriques'/>
         </div>
     );
 };
 
-export default index;
+export default Electriques;
