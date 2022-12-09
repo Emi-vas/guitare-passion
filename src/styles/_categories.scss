@@ -3,6 +3,7 @@
     height: 130px;
     background: $blue-dark;
     background: url("./assets/header-bg.svg");
+    margin-bottom: 50px;
 
     h1 {
         color: white;
@@ -19,4 +20,10 @@
             }
         }
     }
+}
+
+.Categories.listeArticles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

@@ -81,3 +81,24 @@ button {
         background: lighten($color: $blue, $amount: 10);
     }
 }
+
+
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    color: $blue;
+    font-size: 3em;
+    animation: loaderRotate infinite 2s linear;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @keyframes loaderRotate {
+        to {
+            rotate: 1turn;
+        }
+    }
+}

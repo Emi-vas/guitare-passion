@@ -1,20 +1,26 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CategoriesMain from '../../components/CategoriesMain';
 import Header from '../../components/Header';
+import { reqElectricsGuitars } from '../../assets/req';
+import { Guitar } from '../../assets/types';
+import Loader from '../../components/Loader';
 
 const Electriques = () => {
+    const [dataGuitars, setDataGuitars] = useState<undefined | Guitar[]>()
 
     useEffect(() => {
         axios
-        .get("./fakeBdd/articles/electric-guitar.json")
-        .then(res => console.log(res.data))
+        .get(reqElectricsGuitars)
+        .then(res => setDataGuitars(res.data))
+
     }, [])
 
     return (
         <div>
             <Header />
-            <CategoriesMain title='Guitares électriques'/>
+            { dataGuitars && <CategoriesMain title='Guitares électriques' data={dataGuitars}/> }
+            { !dataGuitars && <Loader /> }
         </div>
     );
 };
