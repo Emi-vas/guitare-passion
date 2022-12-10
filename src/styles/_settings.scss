@@ -8,7 +8,7 @@ $p: 'Source Sans Pro', sans-serif;
 //colors
 $blue: #057093;
 $blue-dark: #04455b;
-$blue-bg: rgb(195, 234, 255);
+$blue-bg: #cbf2ff;
 
 $orange: rgb(220, 143, 43);
 $orange-bg: rgb(255, 229, 195);
@@ -67,7 +67,7 @@ button {
     font-weight: 400;
     font-size: 1.1em;
     cursor: pointer;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 7px;
     letter-spacing: 0.1em;
 
@@ -80,7 +80,7 @@ button {
 .btn-1 {
     background: $blue;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     &:hover {
         background: lighten($color: $blue, $amount: 10);
     }

@@ -10,7 +10,7 @@ const ArticleCard = ({ article }: Props) => {
     return (
         <Link to={`./${article.id}`} className='articleCard'>
             <p className='price'>{article.price}€</p>
-            <img src={"./images/articles/" + article.img} alt={article.name} />
+            <img src={"/images/articles/" + article.img} alt={article.name} />
             <p className='title'>{ article.name }</p>
             <div className='rate'>
                 <RateStars rate={article.rate} />

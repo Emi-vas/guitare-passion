@@ -3,16 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { reqElectricsGuitars } from '../../../assets/req';
 import { Guitar } from '../../../assets/types';
+import ArticleCard from '../../../components/ArticleCard';
+import RateStars from '../../../components/RateStars';
 import TopSection from '../../../components/TopSection';
 
 const Electrique = () => {
     const params = useParams()
     const [guitarData, setGuitarData] = useState<undefined | Guitar>()
+    const [allGuitarsData, setAllGuitarsData] = useState<undefined | Guitar[]>()
 
     useEffect(() => {
         axios
         .get(reqElectricsGuitars)
         .then(res => {
+            setAllGuitarsData(res.data)
             const resFiltred = res.data.filter((data: any) => data.id == params.id)
             setGuitarData(resFiltred[0])
         })
@@ -33,12 +37,32 @@ const Electrique = () => {
                         <div className='blocImage'>
                             <img src={'/images/articles/' + guitarData.img} alt={guitarData.name} />
                         </div>
-                        <div className='blocRight'>
+                        <div className='blocRate'>
                             <Cara data={guitarData.cara}/>
+                            <div className='stars'>
+                                <h2>Note globale</h2>
+                                <RateStars rate={guitarData.rate} />
+                            </div>
+                        </div>
+                        <div className='blocSell'>
+                            <div className='price'>
+                                <p>Tarif :</p>
+                                <p ><span> {guitarData.price} €</span></p>
+                            </div>
+                            <button className='btn-1'>Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
             }
+            <div className='othersSection'>
+                <h2>Autres Guitares</h2>
+                {
+                allGuitarsData && allGuitarsData.slice(0, 3).map((guitar) => (
+                
+                        <ArticleCard article={guitar} />
+                ))
+                }
+            </div>
         </div>
     );
 };
@@ -47,7 +71,11 @@ export default Electrique;
 
 
 interface PropsCara {
-    data: any
+    data: {
+        sound: number,
+        maneuverability: number,
+        polyvalence: number
+    }
 }
 
 const Cara = ({ data }: PropsCara) => {

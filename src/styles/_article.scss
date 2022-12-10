@@ -12,8 +12,8 @@
     position: relative;
 
     img {
-        width: 120%;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
+        height: 400px;
         transition: all 0.3s;
     }
 
@@ -65,30 +65,60 @@
 
     .body {
         display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 50px;
     }
 
     .blocImage {
+        //background: $blue-bg;
+        //background: rgb(235, 235, 235);
+        padding: 10px;
+        margin: 15px 20px;
+        border-radius: 15px;
         img {
-            width: 500px;
+            height: 500px;
         }
     }
 
-    .blocRight {
+    .blocRate {
+        margin: 0 5%;
+        .stars {
+            color: rgb(255, 179, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            i {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.9em;
+                margin-top: 0;
+            }
+        }
 
     }
 
     .blocCara {
+        p {
+            font-size: 1.1em;
+            font-weight: 300;
+            margin-bottom: 5px;
+            margin-left: 30px;
+        }
+
         .rate {
             position: relative;
             height: 20px;
             width: 400px;
             border-radius: 30px;
-            $clr1: rgb(19, 121, 255);
-            $clr2: rgb(2, 244, 196);
+            $clr1: #00a2ff;
+            $clr2: rgb(92, 255, 236);
             background: linear-gradient(to right, $clr1, $clr2);
             overflow: hidden;
             border: 1px solid rgba(160, 160, 160, 0.605);
+            margin-bottom: 40px;
 
             &-after {
                 position: absolute;
@@ -99,4 +129,36 @@
             }
         }
     }
+
+    .blocSell {
+        background: rgb(230, 230, 230);
+        padding: 10px;
+        border-radius: 15px;
+        
+        & .price {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+           p {
+            margin: 0;
+           }
+           span {
+                margin-left: 30px;
+                font-size: 2.5em;
+           }
+        }
+    }
+}
+
+
+.othersSection {
+    margin-top: 70px;
+    h2 {
+        width: 100%;
+        font-size: 2em;
+        margin-bottom: 0;
+        transform: translateY(10px);
+    }
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
 }
