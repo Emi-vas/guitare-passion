@@ -53,3 +53,50 @@
         }
     }
 }
+
+
+/* ON PAGE SPE OF AN ARTICLE */
+.articlePage {
+    h1 {
+        color: rgb(65, 65, 65);
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    .body {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    .blocImage {
+        img {
+            width: 500px;
+        }
+    }
+
+    .blocRight {
+
+    }
+
+    .blocCara {
+        .rate {
+            position: relative;
+            height: 20px;
+            width: 400px;
+            border-radius: 30px;
+            $clr1: rgb(19, 121, 255);
+            $clr2: rgb(2, 244, 196);
+            background: linear-gradient(to right, $clr1, $clr2);
+            overflow: hidden;
+            border: 1px solid rgba(160, 160, 160, 0.605);
+
+            &-after {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgb(255, 255, 255);
+                transition: transform 2s ;
+            }
+        }
+    }
+}

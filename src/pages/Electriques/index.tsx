@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import { reqElectricsGuitars } from '../../assets/req';
 import { Guitar } from '../../assets/types';
 import Loader from '../../components/Loader';
+import TopSection from '../../components/TopSection';
 
 const Electriques = () => {
     const [dataGuitars, setDataGuitars] = useState<undefined | Guitar[]>()
@@ -18,7 +19,6 @@ const Electriques = () => {
 
     return (
         <div>
-            <Header />
             { dataGuitars && <CategoriesMain title='Guitares électriques' data={dataGuitars}/> }
             { !dataGuitars && <Loader /> }
         </div>

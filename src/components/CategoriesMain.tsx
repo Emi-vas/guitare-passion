@@ -2,6 +2,7 @@ import React from 'react';
 import { Guitar } from '../assets/types';
 import ArticleCard from './ArticleCard';
 import Header from './Header';
+import TopSection from './TopSection';
 
 interface Props {
     title: string,
@@ -13,10 +14,7 @@ const CategoriesMain = ({ title, data }: Props) => {
 
     return (
         <div>
-            <Header />
-            <div className='Categories top_section '>
-                <h1>{ title }</h1>
-            </div>
+            <TopSection title={title} />
             <div className='Categories listeArticles'>
             {
                 data.map(

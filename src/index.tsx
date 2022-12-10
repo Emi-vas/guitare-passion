@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Categories from './pages/Categories';
 import { uriReq } from "./helper/uriReq"
 import Electriques from './pages/Electriques';
-
+import Electrique from './pages/Electriques/Electrique';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -13,10 +13,10 @@ root.render(
   <BrowserRouter>
     <Routes>
         <Route path='/' element={<Home />} />
-        <Route 
-            path='/guitares-electriques' 
-            element={<Electriques />}
-        />
+        <Route path='/guitares-electriques' element={<Electriques />}/>
+        <Route path='/guitares-electriques/:id' element={<Electrique />}/>
+        
+            
         <Route 
             path='/guitares-acoustiques' 
             element={
@@ -38,6 +38,7 @@ root.render(
                 title={"Amplis"}
                 req={uriReq('amplis')}/>} 
         />
+
         
     </Routes>
   </BrowserRouter>
