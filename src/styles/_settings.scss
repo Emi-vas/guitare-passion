@@ -21,6 +21,10 @@ p {
     font-family: $p;
     font-weight: 200;
     letter-spacing: 0.1em;
+    text-align: justify;
+    & .paraSpace {
+        padding-left: 50px;
+    }
 }
 
 body, html {

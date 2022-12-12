@@ -53,6 +53,9 @@ const Electrique = () => {
                             <button className='btn-1'>Ajouter au panier</button>
                         </div>
                     </div>
+                    <div className='blocDesc'>
+                        <p><span className='paraSpace'></span>{ guitarData.desc }</p>
+                    </div>
                 </div>
             }
             <div className='othersSection'>

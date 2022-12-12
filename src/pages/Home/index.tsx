@@ -33,7 +33,7 @@ const Guide = () => {
         <div className="guide">
              <img 
                 src={isTel ? "./images/guide_tel.jpg" : "./images/guide_pc.jpg"}
-                alt="" 
+                alt="une guitariste" 
             />
 
             <div className="bloc_txt">
