@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <div>
-            { !displayHeader && <i onClick={() => setDisplayHeader(true)} className="fa-solid fa-bars headerTelIcon"></i> }
+            { !displayHeader && <i onClick={() => setDisplayHeader(true)} className="fa-solid fa-bars headerTelIcon" data-testid="buttonMenu"></i> }
             { displayHeader && <HeaderBloc setDisplayHeader={setDisplayHeader} /> }
         </div>
     );
