@@ -1,4 +1,7 @@
-export const data = [
+"use strict";
+exports.__esModule = true;
+exports.data = void 0;
+exports.data = [
     {
         id: 1,
         name: "Harley Benton SC-1000 SBK Progressive Line",
@@ -19,7 +22,7 @@ export const data = [
         name: "Harley Benton SC-450Plus LD Vintage Series",
         price: 198,
         rate: 4.5,
-        img: "4.png",
+        img: "2.png",
         cara: {
             polyvalence: 5,
             maneuverability: 4,
@@ -34,7 +37,7 @@ export const data = [
         name: "Harley Benton TE-52 NA Vintage Series",
         price: 158,
         rate: 4.5,
-        img: "2.png",
+        img: "3.png",
         cara: {
             polyvalence: 4,
             maneuverability: 3,
@@ -49,7 +52,7 @@ export const data = [
         name: "Harley Benton HB-35Plus Lemon",
         price: 248,
         rate: 4.5,
-        img: "3.png",
+        img: "4.png",
         cara: {
             polyvalence: 4,
             maneuverability: 4,
@@ -74,4 +77,4 @@ export const data = [
         desc: "Harley Benton est une marque créée pour et distribuée par le détaillant allemand Thomann. Créée en 19971, elle propose des guitares, basses, banjos, mandolines, microphones, amplificateurs, pédales d'effet, des cordes, des médiators, des pièces détachées, etc., souvent à des prix peu élevés (qui s'expliquent en partie par une fabrication uniquement asiatique et donc très bon marché). Le succès de cette marque s'inscrit dans une tendance de fond d'amélioration de la qualité des instruments peu chers.",
         video: "https://www.youtube.com/embed/pdJpChSiJM4"
     },
-]
+];

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { data } from '../../../assets/electric';
 import { reqElectricsGuitars } from '../../../assets/req';
 import { Guitar } from '../../../assets/types';
 import ArticleCard from '../../../components/ArticleCard';
@@ -11,6 +12,8 @@ const Electrique = () => {
     const params = useParams()
     const [guitarData, setGuitarData] = useState<undefined | Guitar>()
     const [allGuitarsData, setAllGuitarsData] = useState<undefined | Guitar[]>()
+
+    console.log(JSON.stringify(data))
 
     useEffect(() => {
         axios
@@ -39,7 +42,7 @@ const Electrique = () => {
                             <img src={'/images/articles/' + guitarData.img} alt={guitarData.name} />
                         </div>
                         <div className='blocRate'>
-                            <Cara data={guitarData.cara}/>
+                            <Cara dataCara={guitarData.cara} dataStyles={guitarData.style}/>
                             <div className='stars'>
                                 <h2>Note globale</h2>
                                 <RateStars rate={guitarData.rate} />
@@ -55,6 +58,9 @@ const Electrique = () => {
                     </div>
                     <div className='blocDesc'>
                         <p><span className='paraSpace'></span>{ guitarData.desc }</p>
+                    </div>
+                    <div className='blocVideo'>
+                        <iframe  src={guitarData.video} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                     </div>
                 </div>
             }
@@ -74,29 +80,30 @@ export default Electrique;
 
 
 interface PropsCara {
-    data: {
+    dataCara: {
         sound: number,
         maneuverability: number,
         polyvalence: number
     }
+    dataStyles: string[]
 }
 
-const Cara = ({ data }: PropsCara) => {
+const Cara = ({ dataCara, dataStyles }: PropsCara) => {
     const [animSound, setAnimSound] = useState('')
     const [animMan, setAnimMan] = useState('')
     const [animPoly, setAnimPoly] = useState('')
 
     useEffect(() => {
         setTimeout(() => {
-            setAnimSound(`translateX(${data.sound * 100 / 5}%)`)
+            setAnimSound(`translateX(${dataCara.sound * 100 / 5}%)`)
         }, 100)
         setTimeout(() => {
-            setAnimMan(`translateX(${data.maneuverability * 100 / 5}%)`)
+            setAnimMan(`translateX(${dataCara.maneuverability * 100 / 5}%)`)
         }, 300)
         setTimeout(() => {
-            setAnimPoly(`translateX(${data.polyvalence * 100 / 5}%)`)
+            setAnimPoly(`translateX(${dataCara.polyvalence * 100 / 5}%)`)
         }, 500)
-    },[data])
+    },[dataCara])
 
     return (
         <div className='blocCara'>
@@ -122,6 +129,16 @@ const Cara = ({ data }: PropsCara) => {
                     className='rate-after'
                     style={{ transform: animPoly }}
                 ></div>
+            </div>
+            <p>Styles</p>
+            <div className='styles'>
+                {
+                    dataStyles.map(style => (
+                        <div>
+                            [{ style }]
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
