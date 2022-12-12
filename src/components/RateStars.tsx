@@ -31,7 +31,7 @@ const RateStars = ({rate}: Props) => {
         <div>
             {
                 starsArray && starsArray.map(
-                    (star: any, index: number) => <i className={star} key={index}></i>
+                    (star: any, index: number) => <i className={star} key={index} data-testid="star"></i>
                 )
             }
         </div>
