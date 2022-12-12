@@ -1,7 +1,6 @@
 import React from 'react';
 import { Guitar } from '../assets/types';
 import ArticleCard from './ArticleCard';
-import Header from './Header';
 import TopSection from './TopSection';
 
 interface Props {
