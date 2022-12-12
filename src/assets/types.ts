@@ -13,7 +13,7 @@ export type Guitar = {
         maneuverability: number,
         sound: number
     },
-    style: StyleMusic[],
+    style: string[],
     desc: string,
-    video: number,
+    video: string,
 }

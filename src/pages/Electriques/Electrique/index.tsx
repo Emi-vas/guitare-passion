@@ -20,7 +20,8 @@ const Electrique = () => {
             const resFiltred = res.data.filter((data: any) => data.id == params.id)
             setGuitarData(resFiltred[0])
         })
-    },[])
+        window.scrollTo(0,0)
+    },[params.id])
 
     useEffect(() => {
         console.log(guitarData)
@@ -57,9 +58,8 @@ const Electrique = () => {
             <div className='othersSection'>
                 <h2>Autres Guitares</h2>
                 {
-                allGuitarsData && allGuitarsData.slice(0, 3).map((guitar) => (
-                
-                        <ArticleCard article={guitar} />
+                allGuitarsData && allGuitarsData.slice(0, 5).map((guitar) => (
+                    <ArticleCard article={guitar} />
                 ))
                 }
             </div>
@@ -86,14 +86,14 @@ const Cara = ({ data }: PropsCara) => {
     useEffect(() => {
         setTimeout(() => {
             setAnimSound(`translateX(${data.sound * 100 / 5}%)`)
-        }, 200)
+        }, 100)
         setTimeout(() => {
             setAnimMan(`translateX(${data.maneuverability * 100 / 5}%)`)
-        }, 700)
+        }, 300)
         setTimeout(() => {
             setAnimPoly(`translateX(${data.polyvalence * 100 / 5}%)`)
-        }, 1200)
-    },[])
+        }, 500)
+    },[data])
 
     return (
         <div className='blocCara'>
