@@ -1,0 +1,41 @@
+import { render, screen } from "@testing-library/react";
+import ArticleMain from "../ArticleMain";
+
+const data = {
+    id: 1,
+    name: "Harley Benton SC-1000 SBK Progressive Line",
+    price: 198,
+    rate: 4.5,
+    img: "1.png",
+    cara: {
+        polyvalence: 2,
+        maneuverability: 4,
+        sound: 4
+    },
+    style: ["metal", "hard-rock"],
+    desc: "Harley Benton est une marque créée pour et distribuée ",
+    video: "https://www.youtube.com/embed/9rVFGZMx3cs"
+}
+
+beforeEach(() => {
+    render(<ArticleMain articleData={data}/>)
+})
+
+describe("ArticleMain Component", () => {
+    test('display title of article', () => {
+        const title = screen.getByText(/Harley Benton SC-1000 SBK Progressive Line/i)
+        expect(title).toBeInTheDocument()
+    })
+    test('video of article', () => {
+        const video = screen.getByTestId('video')
+        expect(video).toHaveAttribute('src', 'https://www.youtube.com/embed/9rVFGZMx3cs')
+    })
+    test('display price', () => {
+        const price = screen.getByText(/198/i)
+        expect(price).toBeInTheDocument() 
+    })
+    test('display description', () => {
+        const description = screen.getByText(/Harley Benton est une marque créée pour et distribuée/i)
+        expect(description).toBeInTheDocument() 
+    })
+})
