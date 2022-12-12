@@ -1,4 +1,4 @@
-export const data = [
+export const dataElectrics = [
     {
         id: 1,
         name: "Harley Benton SC-1000 SBK Progressive Line",

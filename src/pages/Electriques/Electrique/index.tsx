@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { data } from '../../../assets/electric';
+import { dataElectrics } from '../../../assets/electric';
 import { reqElectricsGuitars } from '../../../assets/req';
 import { Guitar } from '../../../assets/types';
 import ArticleMain from '../../../components/article/ArticleMain';
@@ -13,7 +13,7 @@ const Electrique = () => {
     const [guitarData, setGuitarData] = useState<undefined | Guitar>()
     const [allGuitarsData, setAllGuitarsData] = useState<undefined | Guitar[]>()
 
-    console.log(JSON.stringify(data))
+    console.log(JSON.stringify(dataElectrics))
 
     useEffect(() => {
         axios

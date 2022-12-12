@@ -55,7 +55,7 @@ const ArticleCara = ({ dataCara, dataStyles }: Props) => {
             <div className='styles'>
                 {
                     dataStyles.map(style => (
-                        <div>
+                        <div key={style}>
                             [{ style }]
                         </div>
                     ))
