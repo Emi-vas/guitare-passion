@@ -5,7 +5,7 @@ import { dataElectrics } from '../../../assets/electric';
 import { reqElectricsGuitars } from '../../../assets/req';
 import { Guitar } from '../../../assets/types';
 import ArticleMain from '../../../components/article/ArticleMain';
-import ArticleCard from '../../../components/ArticleCard';
+import ArticleSimilar from '../../../components/article/ArticleSimilar';
 import TopSection from '../../../components/TopSection';
 
 const Electrique = () => {
@@ -13,7 +13,7 @@ const Electrique = () => {
     const [guitarData, setGuitarData] = useState<undefined | Guitar>()
     const [allGuitarsData, setAllGuitarsData] = useState<undefined | Guitar[]>()
 
-    console.log(JSON.stringify(dataElectrics))
+    //console.log(JSON.stringify(dataElectrics))
 
     useEffect(() => {
         axios
@@ -26,24 +26,17 @@ const Electrique = () => {
         window.scrollTo(0,0)
     },[params.id])
 
-    useEffect(() => {
-        console.log(guitarData)
-    },[guitarData])
-
     return (
         <div>
             <TopSection title='Guitares électriques'/>
             {
                 guitarData && <ArticleMain articleData={guitarData} />
             }
-            <div className='othersSection'>
-                <h2>Autres Guitares</h2>
-                {
-                allGuitarsData && allGuitarsData.slice(0, 5).map((guitar) => (
-                    <ArticleCard article={guitar} />
-                ))
-                }
-            </div>
+            {
+                allGuitarsData && guitarData &&
+                <ArticleSimilar data={allGuitarsData} articleRef={guitarData} />
+            }
+            
         </div>
     );
 };

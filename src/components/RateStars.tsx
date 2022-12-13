@@ -7,8 +7,6 @@ interface Props {
 const RateStars = ({rate}: Props) => {
     const [starsArray, setStarsArray] = useState<any>([])
 
-    console.log(Math.trunc(rate))
-
     useEffect(() => {
         let tempArrayStars: undefined | string[] = []
 

@@ -5,7 +5,6 @@ const Header = () => {
     const [displayHeader, setDisplayHeader] = useState(true)
 
     useEffect(() => {
-        console.log(window.innerWidth)
         if(window.innerWidth > 650) {
             // header always ON on desktop
             setDisplayHeader(true)
