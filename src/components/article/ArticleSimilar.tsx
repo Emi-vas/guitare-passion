@@ -33,7 +33,6 @@ const ArticleSimilar = ({ data, articleRef }: Props) => {
         //Filtred with price -500 and +500 of article ref
         tempsSimilar.map((article: any) => {
             const dif = article.price - articleRef.price
-            console.log(dif)
             if(dif <= 500 && dif >= -500) {
                 tempSimilarWithPrice = [...tempSimilarWithPrice, article]
             }

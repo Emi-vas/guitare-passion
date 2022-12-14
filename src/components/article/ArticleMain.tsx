@@ -1,4 +1,5 @@
 import React from 'react';
+import { dataElectrics } from '../../assets/electric';
 import { Guitar } from '../../assets/types';
 import RateStars from '../RateStars';
 import ArticleCara from './ArticleCara';
