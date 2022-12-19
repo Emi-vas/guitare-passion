@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-const Aside = () => {
+interface Props {
+    filterStyleSelected: string | undefined,
+    setFilterStyleSelected: (v: string) => void
+}
+
+const Aside = ({
+    filterStyleSelected,
+    setFilterStyleSelected
+}: Props) => {
     const styles = ["rock", "hard-rock", "metal", "jazz", "funk", "raggae"]
     const [isSticky, setIsSticky] = useState(false)
 
@@ -24,17 +32,22 @@ const Aside = () => {
         <aside id="filtres-pos">
             <div 
                 className={isSticky ? 'filtres stickyAside' : 'filtres'} 
-                
             >
                 <h2>Filtres</h2>
 
-                <form action="" >
+                <form>
                     <p>Styles :</p>
                     <ul>
                         {
                             styles && styles.map(style => (
                                 <li key={style}>
-                                    <input type="radio" id={style} name="style" />
+                                    <input 
+                                        type="radio" 
+                                        id={style} 
+                                        name="style" 
+                                        value={style}
+                                        onChange={(e)=>setFilterStyleSelected(e.target.value)}
+                                    />
                                     <label htmlFor={style}>{ style }</label>
                                 </li>
                             ))

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Guitar } from '../assets/types';
 import ArticleCard from './ArticleCard';
 import Aside from './Aside';
@@ -10,16 +10,33 @@ interface Props {
 }
 
 const CategoriesMain = ({ title, data }: Props) => {
+    const [filterStyleSelected, setFilterStyleSelected] = useState<undefined | string>()
 
+    useEffect(() => {
+        console.log(filterStyleSelected)
+        console.log(data.filter(d => d.style.includes('metal')))
+    },[filterStyleSelected])
 
     return (
         <div>
             <TopSection title={title} />
             <main className='categoriesMain'>
-                <Aside />
+                <Aside 
+                    filterStyleSelected={filterStyleSelected}
+                    setFilterStyleSelected={setFilterStyleSelected}
+                />
                 <div className='Categories listeArticles'>
                 {
-                    data.map(
+                    data
+                    .filter(d => {
+                        if(filterStyleSelected) {
+                            console.log(filterStyleSelected)
+                            return d.style.includes(filterStyleSelected)
+                        } else {
+                            return true
+                        }
+                    })
+                    .map(
                         article => <ArticleCard article={article} key={article.id}/>
                     )
                 }
