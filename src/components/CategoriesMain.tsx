@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CategoriesMain = ({ title, data }: Props) => {
-    const [filterStyleSelected, setFilterStyleSelected] = useState<undefined | string>()
+    const [filterStyleSelected, setFilterStyleSelected] = useState<null | string>(null)
 
     return (
         <div>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 interface Props {
-    filterStyleSelected: string | undefined,
-    setFilterStyleSelected: (v: string) => void
+    filterStyleSelected: string | null,
+    setFilterStyleSelected: (v: string | null) => void
 }
 
 const Aside = ({
@@ -53,6 +53,11 @@ const Aside = ({
                                 </li>
                             ))
                         }
+                        { filterStyleSelected && 
+                            <button 
+                                className="btn-1"
+                                onClick={() => setFilterStyleSelected(null)}
+                            > tous les styles </button> }
                     </ul>
                 </form>
             </div>
