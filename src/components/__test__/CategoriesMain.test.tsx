@@ -63,5 +63,18 @@ describe("CategoriesMain testind", () => {
         expect(cardWithStyleMetal).toBeInTheDocument()
         expect(cardWithoutStyleMetal).not.toBeInTheDocument()
     })
+    test("button to remove filterStyles", () => {
+        render(<MockCategoriesMain />)
+        const filterMetal = screen.getByLabelText(/metal/i)
+        
+        userEvent.click(filterMetal)
+        const button = screen.getByText(/tous les styles/i)
+        userEvent.click(button)
+
+        const cardWithStyleMetal = screen.getByText(/titre1/i)
+        const cardWithoutStyleMetal = screen.getByText(/titre2/i)
+        expect(cardWithStyleMetal).toBeInTheDocument()
+        expect(cardWithoutStyleMetal).toBeInTheDocument()
+    })
 })
 
