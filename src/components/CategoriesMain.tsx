@@ -12,11 +12,6 @@ interface Props {
 const CategoriesMain = ({ title, data }: Props) => {
     const [filterStyleSelected, setFilterStyleSelected] = useState<undefined | string>()
 
-    useEffect(() => {
-        console.log(filterStyleSelected)
-        console.log(data.filter(d => d.style.includes('metal')))
-    },[filterStyleSelected])
-
     return (
         <div>
             <TopSection title={title} />
@@ -30,7 +25,6 @@ const CategoriesMain = ({ title, data }: Props) => {
                     data
                     .filter(d => {
                         if(filterStyleSelected) {
-                            console.log(filterStyleSelected)
                             return d.style.includes(filterStyleSelected)
                         } else {
                             return true

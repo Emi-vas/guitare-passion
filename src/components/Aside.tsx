@@ -46,6 +46,7 @@ const Aside = ({
                                         id={style} 
                                         name="style" 
                                         value={style}
+                                        checked={filterStyleSelected == style}
                                         onChange={(e)=>setFilterStyleSelected(e.target.value)}
                                     />
                                     <label htmlFor={style}>{ style }</label>
