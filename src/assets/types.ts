@@ -1,7 +1,5 @@
 export type Categorie = "accessoires" | "guitares-acoustiques" | "guitares-electriques" | "amplis"
 
-export type StyleMusic = "rock" | "hard-rock" | "metal" | "funk" | "jazz" | "pop" | "classique" | "folk" | "raggae"
-
 export type Guitar = {
     id: number,
     name: string,
@@ -16,4 +14,9 @@ export type Guitar = {
     style: string[],
     desc: string,
     video: string,
+}
+
+export type FilterPrice = {
+    min: null | number,
+    max: null | number
 }

@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
+import { FilterPrice } from "../assets/types";
 
 interface Props {
     filterStyleSelected: string | null,
-    setFilterStyleSelected: (v: string | null) => void
+    setFilterStyleSelected: (v: string | null) => void,
+    filterPrice: FilterPrice,
+    setFilterPrice: (v: FilterPrice) => void
 }
 
 const Aside = ({
     filterStyleSelected,
-    setFilterStyleSelected
+    setFilterStyleSelected,
+    filterPrice,
+    setFilterPrice
 }: Props) => {
     const styles = ["rock", "hard-rock", "metal", "jazz", "funk", "raggae"]
     const [isSticky, setIsSticky] = useState(false)
@@ -59,6 +64,33 @@ const Aside = ({
                                 onClick={() => setFilterStyleSelected(null)}
                             > tous les styles </button> }
                     </ul>
+
+                    <p>Prix</p>
+                    <div className="price">
+                            <input 
+                                type="number" 
+                                placeholder="min"
+                                value={filterPrice.min ? filterPrice.min : ""}
+                                onChange={(e)=> {
+                                    setFilterPrice({
+                                        min: parseInt(e.target.value),
+                                        max: filterPrice.max
+                                    })
+                                }}
+                            />
+                            <div className="separation">-</div>
+                            <input 
+                                type="number" 
+                                placeholder="max"
+                                value={filterPrice.max ? filterPrice.max : ""}
+                                onChange={(e)=> {
+                                    setFilterPrice({
+                                        max: parseInt(e.target.value),
+                                        min: filterPrice.min
+                                    })
+                                }}
+                            />
+                    </div>
                 </form>
             </div>
         </aside>

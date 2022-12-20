@@ -71,6 +71,13 @@ ul, li {
     padding: 0;
 }
 
+input {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 .btn {
     font-family: $p;
     border: none;
