@@ -1,0 +1,11 @@
+@keyframes arrive1 {
+    0% {
+        transform: translateX(-100px) scale(0);
+    }
+    70% {
+        transform: translateX(0px) scale(1.1);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+}
