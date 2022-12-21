@@ -70,6 +70,7 @@ const Aside = ({
                             <input 
                                 type="number" 
                                 placeholder="min"
+                                min={0}
                                 value={filterPrice.min ? filterPrice.min : ""}
                                 onChange={(e)=> {
                                     setFilterPrice({

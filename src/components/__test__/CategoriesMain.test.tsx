@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import CategoriesMain from "../CategoriesMain";
@@ -7,7 +7,7 @@ const data = [
     {
         id: 1,
         name: "titre1",
-        price: 198,
+        price: 200,
         rate: 4.5,
         img: "1.png",
         cara: {
@@ -22,7 +22,7 @@ const data = [
     {
         id: 2,
         name: "titre2",
-        price: 198,
+        price: 2000,
         rate: 4.5,
         img: "1.png",
         cara: {
@@ -75,6 +75,31 @@ describe("CategoriesMain testind", () => {
         const cardWithoutStyleMetal = screen.getByText(/titre2/i)
         expect(cardWithStyleMetal).toBeInTheDocument()
         expect(cardWithoutStyleMetal).toBeInTheDocument()
+    })
+
+    test('min price filter - integration test', () => {
+        render(<MockCategoriesMain />)
+        const minInput = screen.getByPlaceholderText('min')
+        const expensiveArticle = screen.getByText(/titre2/i)
+        const lowCostArticle = screen.getByText(/titre1/i)
+        
+        userEvent.type(minInput, "300")
+        expect(expensiveArticle).toBeInTheDocument()
+        expect(lowCostArticle).not.toBeInTheDocument()
+    })
+    test('max price filter - integration test', () => {
+        render(<MockCategoriesMain />)
+        const maxInput = screen.getByPlaceholderText("max")
+        const expensiveArticle = screen.getByText(/titre2/i) // 2000
+        const lowcostArticle = screen.getByText(/titre1/i) //200
+
+        fireEvent.change(maxInput, {
+            target: {
+                value: "1000"
+            }
+        })
+        expect(expensiveArticle).not.toBeInTheDocument()
+        expect(lowcostArticle).toBeInTheDocument()
     })
 })
 
