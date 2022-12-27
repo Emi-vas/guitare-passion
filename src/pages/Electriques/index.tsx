@@ -8,12 +8,12 @@ import Loader from '../../components/Loader';
 const Electriques = () => {
     const [dataGuitars, setDataGuitars] = useState<undefined | Guitar[]>()
 
+
     useEffect(() => {
         axios
         .get(reqElectricsGuitars)
         .then(res => {
             setDataGuitars(res.data)
-            console.log(res)
         })
 
     }, [])

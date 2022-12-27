@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import ArticleMain from "../ArticleMain";
+import store from "../../../redux/store";
 
 const data = {
     id: 1,
@@ -17,8 +19,16 @@ const data = {
     video: "https://www.youtube.com/embed/9rVFGZMx3cs"
 }
 
+const MookArticleMain = () =>  {
+    return(
+        <Provider store={store}>
+            <ArticleMain articleData={data}/>
+        </Provider>
+    )
+}
+
 beforeEach(() => {
-    render(<ArticleMain articleData={data}/>)
+    render(<MookArticleMain />)
 })
 
 describe("ArticleMain Component", () => {

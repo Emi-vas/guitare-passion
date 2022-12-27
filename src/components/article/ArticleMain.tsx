@@ -1,6 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { dataElectrics } from '../../assets/electric';
 import { Guitar } from '../../assets/types';
+import { addToCart } from '../../redux/shoppingCart/shoppingCart.actions';
 import RateStars from '../RateStars';
 import ArticleCara from './ArticleCara';
 interface Props {
@@ -8,6 +10,7 @@ interface Props {
 }
 
 const ArticleMain = ({ articleData }: Props) => {
+    const dispatch = useDispatch()
     return (
         <div className='articlePage'>
             <h1>{ articleData.name }</h1>
@@ -27,7 +30,10 @@ const ArticleMain = ({ articleData }: Props) => {
                         <p>Tarif :</p>
                         <p ><span> {articleData.price} €</span></p>
                     </div>
-                    <button className='btn-1'>Ajouter au panier</button>
+                    <button 
+                        className='btn-1'
+                        onClick={()=>dispatch(addToCart(articleData))}
+                    >Ajouter au panier</button>
                 </div>
             </div>
             <div className='blocDesc'>

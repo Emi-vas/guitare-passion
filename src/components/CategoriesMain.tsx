@@ -39,10 +39,6 @@ const CategoriesMain = ({ title, data }: Props) => {
         setDataFiltred(dataFiltredTemp)
     },[filterPrice, filterStyleSelected])
 
-    useEffect(() => {
-        console.log(dataFiltred)
-    },[dataFiltred])
-
     return (
         <div>
             <TopSection title={title} />

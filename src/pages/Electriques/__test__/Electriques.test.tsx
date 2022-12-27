@@ -3,6 +3,9 @@ import Electriques from "..";
 import axios from "axios"
 import { dataElectrics } from "../../../assets/electric";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "../../../redux/store";
+import { act } from "react-dom/test-utils";
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -29,23 +32,27 @@ const res = {
 
 const MockElectriques = () => {
     return(
-        <BrowserRouter>
-            <Electriques />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Electriques />
+            </BrowserRouter>
+        </Provider>
     )
 }
 
 beforeEach(() => {
     mockedAxios.get.mockResolvedValue(res)
-    render(<MockElectriques />)
+
 })
 
 describe("testing page 'Electriques", () => {
-    test("display loader when there is no data", async() => {
+/*     test("display loader when there is no data", async() => {
+        await act( async () => render(<MockElectriques/>));
         const loader = await screen.findByTestId("loader")
         expect(loader).toBeInTheDocument()
-    })
+    }) */
     test("display page when there is data", async() => {
+        await act( async () => render(<MockElectriques/>));
         const title = await screen.findByText(/Harley Benton/i)
         const loader = screen.queryByTestId(/loader/i)
         expect(title).toBeInTheDocument() 
