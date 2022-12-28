@@ -44,7 +44,7 @@ const ArticleMain = ({ articleData }: Props) => {
                                 className='btn-1'
                                 onClick={()=>dispatch(removeToCart(articleData))}
                             >-</button>
-                            <p>{isInCart}</p>    
+                            <p data-testid="cart-qte">{isInCart}</p>    
                             <button
                                 className='btn-1'
                                 onClick={()=>dispatch(addToCart(articleData))}
