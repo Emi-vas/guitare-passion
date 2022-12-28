@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom"
+import { ICONS } from "../assets/constants";
+import { GuitarInCart, Store } from "../assets/types";
 
 const Header = () => {
     const [displayHeader, setDisplayHeader] = useState(true)
@@ -29,6 +32,17 @@ interface PropsHeaderBloc {
 }
 
 const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
+    const cart = useSelector((store: Store) => store.cart.cart)
+    const [cartQte, setCartQte] = useState(0)
+
+    useEffect(() => {
+        let qte = 0
+        if(cart[0]) {
+            cart.forEach((c: GuitarInCart) =>  qte = qte + (1 * c.qte))
+        }
+        setCartQte(qte)
+    },[cart])
+
     return (
         <div className="Header">
             <div className="cross" onClick={() => setDisplayHeader(false)}>&times;</div>
@@ -46,7 +60,11 @@ const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
                     <Link to="/accessoires" >Accessoires</Link>
                 </div>
             </nav>
-          
+
+            <div className="cart">
+                <p>{cartQte}</p>
+                <i className={ICONS.cart}></i>
+            </div>
         </div>
     )
 }

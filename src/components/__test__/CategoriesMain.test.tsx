@@ -1,7 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import CategoriesMain from "../CategoriesMain";
+import store from "../../redux/store";
 
 const data = [
     {
@@ -39,7 +41,9 @@ const data = [
 const MockCategoriesMain = () => {
   return(
     <BrowserRouter>
-        <CategoriesMain title="title" data={data}/>
+        <Provider store={store}>
+            <CategoriesMain title="title" data={data}/>
+        </Provider>
     </BrowserRouter>
   )
 }
@@ -99,7 +103,7 @@ describe("CategoriesMain testind", () => {
             }
         })
         expect(expensiveArticle).not.toBeInTheDocument()
-        expect(lowcostArticle).toBeInTheDocument()
+        expect(lowcostArticle).toBeInTheDocument() 
     })
 })
 

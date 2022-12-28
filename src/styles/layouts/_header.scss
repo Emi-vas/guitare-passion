@@ -8,11 +8,31 @@
         display: none;
     }
 
+    & .cart {
+        position: absolute;
+        display: flex;
+        top: 10px;
+        right: 50px;
+        background: $blue;
+        padding: 5px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        p {
+            margin: 0 10px;
+            font-size: 1.3em;
+        }
+        i {
+            font-size: 1.7em;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
     nav {
         padding: 10px 0;
-        width: 40%;
         display: flex;
-        justify-content: space-around;
     }
 
 
@@ -20,7 +40,8 @@
         display: flex;
         justify-content: center;
         position: relative;
-        font-size: 1.3em;
+        font-size: 1.2em;
+        margin: 5px 20px;
         &::after {
             transition: all 0.3s;
             content: "";

@@ -3,11 +3,15 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "../Header";
 import { resizeTo } from 'window-resizeto'
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 const MockHeader = () => {
     return(
        <BrowserRouter>
+        <Provider store={store}>
             <Header />
+        </Provider>
        </BrowserRouter> 
     )
 }

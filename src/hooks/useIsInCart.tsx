@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Cart, Guitar, GuitarInCart } from '../assets/types';
+import { Guitar, GuitarInCart, Store } from '../assets/types';
 
 /* 
     Get an article and return the qte if is in cart.
@@ -8,7 +8,7 @@ import { Cart, Guitar, GuitarInCart } from '../assets/types';
 */
 
 const useIsInCart = (articleData: Guitar) => {
-    const cart = useSelector((state: Cart) => state.cart.cart)
+    const cart = useSelector((store: Store) => store.cart.cart)
     const [isInCart, setIsInCart] = useState(false)
 
     useEffect(() => {

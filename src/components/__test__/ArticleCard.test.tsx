@@ -1,6 +1,8 @@
 import ArticleCard from "../ArticleCard";
 import { BrowserRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 const data = {
     id: 1,
@@ -21,7 +23,9 @@ const data = {
 const MockArticleCard = () => {
     return (
         <BrowserRouter>
-            <ArticleCard article={data} />
+            <Provider store={store}>
+                <ArticleCard article={data} />
+            </Provider>
         </BrowserRouter>
     )
 }

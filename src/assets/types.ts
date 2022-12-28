@@ -18,7 +18,7 @@ export type Guitar = {
 
 export type GuitarInCart = Guitar & {qte: number}
 
-export type Cart = {
+export type Store = {
     cart: {
         cart:GuitarInCart[] | []
     }
