@@ -62,7 +62,7 @@ const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
             </nav>
 
             <div className="cart">
-                <p>{cartQte}</p>
+                <p data-testid="cart-qte">{cartQte}</p>
                 <i className={ICONS.cart}></i>
             </div>
         </div>
