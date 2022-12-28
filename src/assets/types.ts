@@ -16,6 +16,14 @@ export type Guitar = {
     video: string,
 }
 
+export type GuitarInCart = Guitar & {qte: number}
+
+export type Cart = {
+    cart: {
+        cart:GuitarInCart[] | []
+    }
+}
+
 export type FilterPrice = {
     min: null | number,
     max: null | number

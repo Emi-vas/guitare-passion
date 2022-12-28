@@ -12,7 +12,7 @@ import { useEffect } from "react";
 const App = () => {
     const cart = useSelector((store: any) => store.cart)
     useEffect(() => {
-        console.log(cart)
+        //console.log(cart)
     },[cart])
     return (
         <Routes>

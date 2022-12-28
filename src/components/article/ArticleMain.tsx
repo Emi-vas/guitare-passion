@@ -1,7 +1,8 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { dataElectrics } from '../../assets/electric';
 import { Guitar } from '../../assets/types';
+import useIsInCart from '../../hooks/useIsInCart';
 import { addToCart } from '../../redux/shoppingCart/shoppingCart.actions';
 import RateStars from '../RateStars';
 import ArticleCara from './ArticleCara';
@@ -11,6 +12,12 @@ interface Props {
 
 const ArticleMain = ({ articleData }: Props) => {
     const dispatch = useDispatch()
+    const isInCart = useIsInCart(articleData)
+
+    useEffect(() => {
+        console.log(isInCart)
+    },[isInCart])
+
     return (
         <div className='articlePage'>
             <h1>{ articleData.name }</h1>
