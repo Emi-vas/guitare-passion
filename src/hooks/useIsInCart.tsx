@@ -12,13 +12,14 @@ const useIsInCart = (articleData: Guitar) => {
     const [isInCart, setIsInCart] = useState(false)
 
     useEffect(() => {
+        console.log('reload')
         let inCartTemp: boolean | number = false
         if(!cart) {
             return
         }
         cart.map((c: GuitarInCart) => c.id == articleData.id ? inCartTemp = c.qte : false)
         setIsInCart(inCartTemp)
-    },[cart])
+    },[cart, articleData])
 
     return isInCart ;
 };
