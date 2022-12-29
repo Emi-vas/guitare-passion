@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { dataElectrics } from '../../assets/electric';
 import { Guitar } from '../../assets/types';
 import useIsInCart from '../../hooks/useIsInCart';
 import { addToCart, removeToCart } from '../../redux/shoppingCart/shoppingCart.actions';
 import RateStars from '../RateStars';
 import ArticleCara from './ArticleCara';
+import { ICONS } from '../../assets/constants';
 interface Props {
     articleData: Guitar
 }
@@ -39,17 +41,23 @@ const ArticleMain = ({ articleData }: Props) => {
                             onClick={()=>dispatch(addToCart(articleData))}
                         >Ajouter au panier</button>
                         :
-                        <div className='qteBloc'>
-                            <button
-                                className='btn-1'
-                                onClick={()=>dispatch(removeToCart(articleData))}
-                            >-</button>
-                            <p data-testid="cart-qte">{isInCart}</p>    
-                            <button
-                                className='btn-1'
-                                onClick={()=>dispatch(addToCart(articleData))}
-                            >+</button>    
-                        </div>
+                        <>
+                             <div className='qteBloc'>
+                                <button
+                                    className='btn-1'
+                                    onClick={()=>dispatch(removeToCart(articleData))}
+                                >-</button>
+                                <p data-testid="cart-qte">{isInCart}</p>    
+                                <button
+                                    className='btn-1'
+                                    onClick={()=>dispatch(addToCart(articleData))}
+                                >+</button>    
+                            </div>
+                            <Link to={"/cart"} className='linkCart'>
+                                <p>Voir le panier</p>
+                                <i className={ICONS.cart}></i>
+                            </Link>
+                        </>
                     }
                 </div>
             </div>
