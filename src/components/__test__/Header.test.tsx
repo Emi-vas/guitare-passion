@@ -8,7 +8,7 @@ import store from "../../redux/store";
 import { addToCart } from "../../redux/shoppingCart/shoppingCart.actions";
 import { Interface } from "readline";
 
-const anArticle = {
+export const anArticle = {
     id: 1,
     name: "Harley Benton SC-1000 SBK Progressive Line",
     price: 198,

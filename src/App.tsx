@@ -7,6 +7,7 @@ import Amplis from "./pages/Amplis"
 import Home from './pages/Home';
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import Cart from "./pages/Cart";
 
 
 const App = () => {
@@ -25,6 +26,8 @@ const App = () => {
             <Route path='/accessoires' element={<Accessoires />}/>
 
             <Route path='/amplis' element={<Amplis />}/>
+            
+            <Route path='/cart' element={<Cart />}/>
         </Routes>
     );
 };
