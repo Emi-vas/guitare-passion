@@ -6,7 +6,6 @@ import userEvent from "@testing-library/user-event";
 import { Provider, useDispatch } from "react-redux";
 import store from "../../redux/store";
 import { addToCart } from "../../redux/shoppingCart/shoppingCart.actions";
-import { Interface } from "readline";
 
 export const anArticle = {
     id: 1,
@@ -25,14 +24,15 @@ export const anArticle = {
 }
 
 interface Props {
-    cart ?: boolean
+    cart ?: boolean,
+    disableCart ?: true
 }
 
-const MockHeader = ({cart} :Props) => {
+const MockHeader = ({cart, disableCart} :Props) => {
     return(
        <BrowserRouter>
             <Provider store={store}>
-                {cart ? <HeaderWithDispatch /> : <Header /> }
+                {cart ? <HeaderWithDispatch /> : <Header disableCart={disableCart} /> }
             </Provider>
        </BrowserRouter> 
     )
@@ -52,6 +52,12 @@ describe("test header", () => {
         render(<MockHeader />)
         const firstLink = screen.getByText(/Guitare électriques/i)
         expect(firstLink).toBeInTheDocument()
+    })
+
+    test('can hide the cart whene you pass props disableCart', () => {
+        render(<MockHeader disableCart={true} />)
+        const cart = screen.queryByTestId('carte-qte')
+        expect(cart).not.toBeInTheDocument()
     })
 
     test('cart on header with no article in store', ()=>{

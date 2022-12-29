@@ -4,7 +4,11 @@ import { Link } from "react-router-dom"
 import { ICONS } from "../assets/constants";
 import { GuitarInCart, Store } from "../assets/types";
 
-const Header = () => {
+interface Props {
+    disableCart ?: true
+}
+
+const Header = ({disableCart}: Props) => {
     const [displayHeader, setDisplayHeader] = useState(true)
 
     useEffect(() => {
@@ -19,7 +23,7 @@ const Header = () => {
     return (
         <div>
             { !displayHeader && <i onClick={() => setDisplayHeader(true)} className="fa-solid fa-bars headerTelIcon" data-testid="buttonMenu"></i> }
-            { displayHeader && <HeaderBloc setDisplayHeader={setDisplayHeader} /> }
+            { displayHeader && <HeaderBloc setDisplayHeader={setDisplayHeader} disableCart={disableCart} /> }
         </div>
     );
 };
@@ -29,9 +33,10 @@ export default Header;
 
 interface PropsHeaderBloc {
     setDisplayHeader: (value: boolean) => void
+    disableCart ?: true
 }
 
-const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
+const HeaderBloc = ({ setDisplayHeader, disableCart }: PropsHeaderBloc) => {
     const cart = useSelector((store: Store) => store.cart.cart)
     const [cartQte, setCartQte] = useState(0)
 
@@ -61,10 +66,13 @@ const HeaderBloc = ({ setDisplayHeader }: PropsHeaderBloc) => {
                 </div>
             </nav>
 
-            <Link to={"/cart"} className="cart">
-                <p data-testid="cart-qte">{cartQte}</p>
-                <i className={ICONS.cart}></i>
-            </Link>
+           {
+                !disableCart ? 
+                <Link to={"/cart"} className="cart">
+                    <p data-testid="cart-qte">{cartQte}</p>
+                    <i className={ICONS.cart}></i>
+                </Link> : null
+           }
         </div>
     )
 }

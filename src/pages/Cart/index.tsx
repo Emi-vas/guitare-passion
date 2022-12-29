@@ -11,8 +11,7 @@ const Cart = () => {
 
     return (
         <div className='panier'>
-            <Header />
-            <TopSection title='Panier' />
+            <TopSection title='Panier' disableCart={true}/>
 
             <h1>Votre panier</h1>
 

@@ -2,13 +2,14 @@ import React from 'react';
 import Header from './Header';
 
 interface Props {
-    title: string
+    title: string,
+    disableCart ?: true
 }
 
-const TopSection = ({ title }: Props) => {
+const TopSection = ({ title, disableCart }: Props) => {
     return (
         <div>
-            <Header />
+            <Header disableCart={disableCart} />
             <div className='Categories top_section '>
                 <h1>{ title }</h1>
             </div>

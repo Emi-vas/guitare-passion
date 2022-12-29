@@ -7,7 +7,7 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <Header />
+            <Header disableCart={true} />
             <Guide />
             <h2>Nos catégories</h2>
             <Categories />
