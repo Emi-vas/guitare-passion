@@ -10,7 +10,8 @@
 
     .body {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: flex-start;
     }
 
     .cartItems {
@@ -88,5 +89,22 @@
             transform: translate(10px, 10px);
        }
 
+    }
+}
+
+.checkout {
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.225);
+    box-shadow: 2px 3px 7px rgba(57, 57, 57, 0.432);
+    padding: 20px ;
+    border-radius: 20px;
+    transform: translateY(70px);
+    h3 {
+        font-size: 2em;
+        margin: 0;
+    }
+    div {
+        font-size: 3em;
+        margin: 20px 0;
     }
 }
