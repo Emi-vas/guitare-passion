@@ -12,7 +12,6 @@ const useIsInCart = (articleData: Guitar) => {
     const [isInCart, setIsInCart] = useState(false)
 
     useEffect(() => {
-        console.log('reload')
         let inCartTemp: boolean | number = false
         if(!cart) {
             return

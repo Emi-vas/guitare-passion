@@ -1,4 +1,4 @@
-.panier {
+.cart {
     h1 {
         text-align: center;
     }
@@ -6,5 +6,87 @@
     .empty {
         text-align: center;
         font-size: 1.3em;
+    }
+
+    .body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cartItems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $blue-bg;
+    padding: 10px;
+    border-radius: 10px;
+    width: 600px;
+    margin: 20px 0;
+    
+
+    h3 {
+        max-width: 70%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 30px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+    }
+
+    img{
+        max-height: 300px;
+    }
+
+    .qteBloc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            padding: 10px 20px;
+            background: white;
+            font-size: 1.1em;
+            animation: qte 0.7s both;
+            @keyframes qte {
+                from {
+                    transform: scaleX(0);
+                }
+            }
+        }
+    }
+
+    .price {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 1.3em;
+
+
+       h3 {
+        margin: 0;
+        font-size: 0.7em;
+        font-weight: 400;
+        font-family: $p;
+        color: $blue;
+       }
+    
+       p { 
+            font-weight: 400;
+            margin: 10px 0;
+            margin-right: 20px;
+            color: $blue;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            transform: translate(10px, 10px);
+       }
+
     }
 }

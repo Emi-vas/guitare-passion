@@ -4,6 +4,7 @@ import ArticleMain from "../ArticleMain";
 import store from "../../../redux/store";
 import userEvent from "@testing-library/user-event";
 import { click } from "@testing-library/user-event/dist/click";
+import { BrowserRouter } from "react-router-dom";
 
 const data = {
     id: 1,
@@ -23,9 +24,11 @@ const data = {
 
 const MookArticleMain = () =>  {
     return(
-        <Provider store={store}>
-            <ArticleMain articleData={data}/>
-        </Provider>
+        <BrowserRouter>
+            <Provider store={store}>
+                <ArticleMain articleData={data}/>
+            </Provider>
+        </BrowserRouter>
     )
 }
 
