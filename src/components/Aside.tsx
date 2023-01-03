@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FilterPrice } from "../assets/types";
+import { ICONS } from "../assets/constants";
 
 interface Props {
     filterStyleSelected: string | null,
@@ -14,8 +15,12 @@ const Aside = ({
     filterPrice,
     setFilterPrice
 }: Props) => {
+
     const styles = ["rock", "hard-rock", "metal", "jazz", "funk", "raggae"]
     const [isSticky, setIsSticky] = useState(false)
+    const [isSmall, setIsSmall] = useState(false)
+    const [isTel, setIsTel] = useState(false)
+    const [displayFilters, setDisplayFilters] = useState(false)
 
     const stickyEffect = () => {
         const posFiltre = document.getElementById('filtres-pos')?.getBoundingClientRect()
@@ -28,18 +33,32 @@ const Aside = ({
 
     useEffect(() => {
         window.addEventListener('scroll', stickyEffect)
+        window.innerWidth > 1000 ? setIsSmall(false) : setIsSmall(true)
+        window.innerWidth < 500 ? setIsTel(true) : setIsTel(false)
+
         return () => {
             window.removeEventListener('scroll', stickyEffect)
         }
     },[])
 
     return (
-        <aside id="filtres-pos">
+        <aside 
+            id="filtres-pos"
+            style={{
+                minWidth: (isSmall && !displayFilters) || isTel ? "30px" : "190px",
+            }}
+        >
+            { !isSmall || displayFilters ?
             <div 
                 className={isSticky ? 'filtres stickyAside' : 'filtres'} 
             >
+                { isSmall && 
+                    <i 
+                        className={ICONS.backArrow + " back-arrow"}
+                        onClick={()=> setDisplayFilters(false)} 
+                    ></i> 
+                }
                 <h2>Filtres</h2>
-
                 <form>
                     <p>Styles :</p>
                     <ul>
@@ -94,6 +113,15 @@ const Aside = ({
                     </div>
                 </form>
             </div>
+            : 
+            // display icon on small size
+            <div 
+                className={isSticky ? 'stickyAside icon' : 'icon'}
+                onClick={()=>setDisplayFilters(true)}
+            >
+                <i className={ICONS.settings}></i>
+            </div>
+            }
         </aside>
     );
 };

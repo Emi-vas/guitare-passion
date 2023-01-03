@@ -93,7 +93,7 @@
 @media screen and (max-width: 650px) {
     .Header {
         bottom: 0;
-        background: $blue-dark;
+        background: $blue;
         width: auto;
         padding-top: 40px;
         padding-right: 30px;
@@ -127,7 +127,7 @@
             align-items: flex-start;
             font-size: 0.9em;
 
-            a {
+            .blocLien a {
                 margin: 30px 55px;
                 justify-content: flex-start;
                 &::after {
@@ -152,7 +152,7 @@
     z-index: 3;
     color: white;
     background: rgba(0, 0, 0, 0.302);
-    font-size: 1.7em;
+    font-size: 1.4em;
     padding: 10px;
     cursor: pointer;
 }

@@ -52,6 +52,16 @@
             transform: scale(1.2);
         }
     }
+
+    //on Tel 
+    @media screen and (max-width: 500px) {
+        width: 90%;
+        font-size: 0.8em;
+
+        img {
+            height: 350px;
+        }
+    }
 }
 
 
