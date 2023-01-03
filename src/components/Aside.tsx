@@ -118,6 +118,7 @@ const Aside = ({
             <div 
                 className={isSticky ? 'stickyAside icon' : 'icon'}
                 onClick={()=>setDisplayFilters(true)}
+                data-testid="icon-filters"
             >
                 <i className={ICONS.settings}></i>
             </div>
