@@ -1,9 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import CategoriesMain from "../CategoriesMain";
 import store from "../../redux/store";
+import { useEffect } from "react";
+import { setFilterList } from "../../redux/filter/filter.action";
 
 const data = [
     {
@@ -42,10 +44,23 @@ const MockCategoriesMain = () => {
   return(
     <BrowserRouter>
         <Provider store={store}>
-            <CategoriesMain title="title" data={data}/>
+            <CategorieMainCompo />
         </Provider>
     </BrowserRouter>
   )
+}
+
+const CategorieMainCompo = () => {
+    const dispatch = useDispatch()
+    const listFilter = ["rock", "hard-rock", "metal", "jazz", "funk", "raggae"]
+
+    useEffect(() => {
+        dispatch(setFilterList(listFilter))
+    },[])
+
+    return(
+        <CategoriesMain title="title" data={data}/>
+    )
 }
 
 describe("CategoriesMain testind", () => {

@@ -1,15 +1,21 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { Provider } from "react-redux";
 import { resizeTo } from "window-resizeto";
+import store from "../../redux/store";
 import Aside from "../Aside";
 
 const MockAside = () => {
-    return (<Aside 
-        filterStyleSelected=""
-        setFilterStyleSelected={()=>{}}
-        filterPrice={{min: 0, max: 0}}
-        setFilterPrice={()=>{}}
-    />)
+    return (
+        <Provider store={store}>
+            <Aside 
+                filterStyleSelected=""
+                setFilterStyleSelected={()=>{}}
+                filterPrice={{min: 0, max: 0}}
+                setFilterPrice={()=>{}}
+            />
+        </Provider>
+    )
 }
 
 const iconFilters = () => {
