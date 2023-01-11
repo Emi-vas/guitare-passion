@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Cart from "./pages/Cart";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         //console.log(cart)
     },[cart])
     return (
+        <>
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/guitares-electriques' element={<Electriques />}/>
@@ -29,6 +31,8 @@ const App = () => {
             
             <Route path='/cart' element={<Cart />}/>
         </Routes>
+        <Footer />
+        </>
     );
 };
 

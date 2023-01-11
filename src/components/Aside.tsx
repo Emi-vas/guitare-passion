@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FilterPrice } from "../assets/types";
 import { ICONS } from "../assets/constants";
+import { useSelector } from "react-redux";
 
 interface Props {
     filterStyleSelected: string | null,
@@ -16,7 +17,7 @@ const Aside = ({
     setFilterPrice
 }: Props) => {
 
-    const styles = ["rock", "hard-rock", "metal", "jazz", "funk", "raggae"]
+    const styles: string[] = useSelector((state: any) => state.filterList)
     const [isSticky, setIsSticky] = useState(false)
     const [isSmall, setIsSmall] = useState(false)
     const [isTel, setIsTel] = useState(false)

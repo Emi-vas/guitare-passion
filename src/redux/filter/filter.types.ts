@@ -1,0 +1,1 @@
+export const SET_FILTER_LIST = "SET_FILTER_LIST"
