@@ -60,31 +60,7 @@ const Aside = ({
                 }
                 <h2>Filtres</h2>
                 <form>
-                    <p>Styles :</p>
-                    <ul>
-                        {
-                            styles && styles.map(style => (
-                                <li key={style}>
-                                    <input 
-                                        type="radio" 
-                                        id={style} 
-                                        name="style" 
-                                        value={style}
-                                        checked={filterStyleSelected == style}
-                                        onChange={(e)=>setFilterStyleSelected(e.target.value)}
-                                    />
-                                    <label htmlFor={style}>{ style }</label>
-                                </li>
-                            ))
-                        }
-                        { filterStyleSelected && 
-                            <button 
-                                className="btn-1"
-                                onClick={() => setFilterStyleSelected(null)}
-                            > tous les styles </button> }
-                    </ul>
-
-                    <p>Prix</p>
+                <p>Prix</p>
                     <div className="price">
                             <input 
                                 type="number" 
@@ -111,6 +87,31 @@ const Aside = ({
                                 }}
                             />
                     </div>
+                    <p>Styles :</p>
+                    <ul>
+                        {
+                            styles && styles.map(style => (
+                                <li key={style}>
+                                    <input 
+                                        type="radio" 
+                                        id={style} 
+                                        name="style" 
+                                        value={style}
+                                        checked={filterStyleSelected == style}
+                                        onChange={(e)=>setFilterStyleSelected(e.target.value)}
+                                    />
+                                    <label htmlFor={style}>{ style }</label>
+                                </li>
+                            ))
+                        }
+                        { filterStyleSelected && 
+                            <button 
+                                className="btn-1"
+                                onClick={() => setFilterStyleSelected(null)}
+                            > tous les styles </button> }
+                    </ul>
+
+
                 </form>
             </div>
             : 

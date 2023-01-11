@@ -37,7 +37,7 @@ const ArticleMain = ({ articleData }: Props) => {
                     </div>
                     {
                         !isInCart ? <button 
-                            className='btn-1'
+                            className='btn-1 btn-add'
                             onClick={()=>dispatch(addToCart(articleData))}
                         >Ajouter au panier</button>
                         :

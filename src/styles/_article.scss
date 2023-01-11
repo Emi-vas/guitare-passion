@@ -81,8 +81,6 @@
     }
 
     .blocImage {
-        //background: $blue-bg;
-        //background: rgb(235, 235, 235);
         padding: 10px;
         margin: 15px 20px;
         border-radius: 15px;
@@ -213,6 +211,86 @@
             width: 50%;
             aspect-ratio: 16/9;
         }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .body {
+            //flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .blocSell {
+            order: 2;
+        }
+        .blocRate {
+            order: 3;
+        }
+        .blocVideo {
+            iframe {
+                width: 80%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        h1 {
+            font-size: 1.3em;
+            max-width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        .body {
+            box-sizing: border-box;
+        }
+        .blocImage {
+            margin: 0;
+            padding: 0;
+            width: 40%;
+            img {
+                width: 100%;
+                height: unset;
+            }
+        }
+        .blocSell {
+            width: 47%;
+            padding: 7px;
+            font-size: 0.8em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & .btn-add {
+                padding: 10px;
+                //width: 130px;
+            }
+        }
+        .blocDesc {
+            p {
+                font-size: 0.9em;
+                width: 90%;
+                margin: auto;
+                margin-top: 30px;
+            }
+        }
+        .blocVideo {
+            iframe {
+                width: 100%;
+            }
+        }
+        .blocRate {
+            margin: 30px 0;
+            width: 90%;
+            font-size: 0.9em;
+        }
+        .blocCara {
+            p {
+                font-size: 1em;
+            }
+            .rate {
+                width: 100%;
+                height: 17px;
+            }
+        }
+
     }
 }
 
