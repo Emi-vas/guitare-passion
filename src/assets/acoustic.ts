@@ -16,7 +16,7 @@ export const dataAcoustic = [
         },
         style: ["pop", "blues"],
         desc: "Harley Benton est une marque créée pour et distribuée par le détaillant allemand Thomann. Créée en 19971, elle propose des guitares, basses, banjos, mandolines, microphones, amplificateurs, pédales d'effet, des cordes, des médiators, des pièces détachées, etc., souvent à des prix peu élevés (qui s'expliquent en partie par une fabrication uniquement asiatique et donc très bon marché). Le succès de cette marque s'inscrit dans une tendance de fond d'amélioration de la qualité des instruments peu chers.",
-        video: "https://www.youtube.com/watch?v=mHWKyn_Uggo&ab_channel=MathieuHoueix"
+        video: "https://www.youtube.com/embed/mHWKyn_Uggo"
     },
     {
         id: 17,
@@ -31,7 +31,7 @@ export const dataAcoustic = [
         },
         style: ["pop", "country", "blues", "picking"],
         desc: "Harley Benton est une marque créée pour et distribuée par le détaillant allemand Thomann. Créée en 19971, elle propose des guitares, basses, banjos, mandolines, microphones, amplificateurs, pédales d'effet, des cordes, des médiators, des pièces détachées, etc., souvent à des prix peu élevés (qui s'expliquent en partie par une fabrication uniquement asiatique et donc très bon marché). Le succès de cette marque s'inscrit dans une tendance de fond d'amélioration de la qualité des instruments peu chers.",
-        video: "https://www.youtube.com/watch?v=Yzv1RW8QZ7E&ab_channel=RewolucjaGitar"
+        video: "https://www.youtube.com/embed/Yzv1RW8QZ7E"
     },
     {
         id: 18,
@@ -46,7 +46,7 @@ export const dataAcoustic = [
         },
         style: ["pop", "country", "blues"],
         desc: "Takamine est la marque d'un fabricant de guitares dont la compagnie éponyme est basée à Nakatsugawa dans la préfecture de Gifu au Japon depuis 1966. Elle tient son nom de la montagne Takamine [archive] au pied de laquelle se trouve l'atelier de lutherie1.bElle produisait à l'origine des guitares acoustiques et s'est ensuite spécialisée dans les guitares électro-acoustiques sur le marché desquelles elle est un des leaders.",
-        video: "https://www.youtube.com/watch?v=Win-lNJTDYY&ab_channel=Gear4musicGuitars"
+        video: "https://www.youtube.com/embed/Win-lNJTDYY"
     },
     {
         id: 19,
@@ -61,7 +61,7 @@ export const dataAcoustic = [
         },
         style: ["classique", "flamenco"],
         desc: "Yamaha ou Yamaha Corporation est un conglomérat japonais opérant dans de nombreux domaines, parmi lesquels les instruments de musique. Elle a été fondée en 1887 par un horloger pour la fabrication d'orgues, Torakusu Yamaha, mais s'est diversifiée à partir de la Seconde Guerre mondiale. Elle est devenue, depuis, une multinationale.",
-        video: "https://www.youtube.com/watch?v=fyGeDM5Imqk&ab_channel=GuitarmanGuitarSoundTests"
+        video: "https://www.youtube.com/embed/fyGeDM5Imqk"
     },
     {
         id: 20,
@@ -76,6 +76,6 @@ export const dataAcoustic = [
         },
         style: ["classique", "flamenco"],
         desc: "Musikhaus Thomann est une entreprise familiale allemande spécialisée dans la vente et la fabrication d'instruments de musique ainsi que de matériel et d'accessoires. Elle fut fondée en 1954 à Treppendorf (petit village appartenant aujourd'hui à la commune de Burgebrach, en Haute-Franconie) par Hans Thomann senior.",
-        video: "https://www.youtube.com/watch?v=iv0fTEdJKik&ab_channel=GuitarwithBob"
+        video: "https://www.youtube.com/embed/iv0fTEdJKik"
     }
 ]

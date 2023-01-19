@@ -9,6 +9,8 @@ import ArticleMain from '../../components/article/ArticleMain';
 import ArticleSimilar from '../../components/article/ArticleSimilar';
 import TopSection from '../../components/TopSection';
 
+import { dataAcoustic } from '../../assets/acoustic';
+
 interface Props {
     title: string,
     req: string
@@ -18,6 +20,8 @@ const Article = ({ title, req }: Props) => {
     const params = useParams()
     const [data, setData] = useState<[] | Guitar[]>([])
     const [articleData, setArticleData] = useState<undefined | Guitar>()
+
+    console.log(JSON.stringify(dataAcoustic))
 
     useEffect(() => {
         axios
@@ -29,7 +33,6 @@ const Article = ({ title, req }: Props) => {
         })
         window.scrollTo(0,0)
     },[params.id])
-
 
     return (
         <div>
