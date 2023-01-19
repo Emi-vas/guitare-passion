@@ -8,7 +8,7 @@ import { createStore } from "redux";
 import rootReducer from "../../redux/rootReducer";
 
 interface Props {
-    number: number
+    number?: number
 }
 
 const App = ({ number }: Props) => {

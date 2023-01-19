@@ -1,14 +1,16 @@
+//React
 import { Routes, Route } from "react-router-dom"
-import Electriques from './pages/Electriques';
-import Electrique from './pages/Electriques/Electrique';
-import Acoustiques from "./pages/Acoustiques"
-import Accessoires from "./pages/Accessoires"
-import Amplis from "./pages/Amplis"
-import Home from './pages/Home';
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+//Compo
+import Home from './pages/Home';
 import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
+import MainCategorie from "./pages/MainCategorie";
+import Article from "./pages/Article";
+//assets
+import { AcousticFilters, ElectricFilters } from "./assets/filters";
+import { reqAcousticsGuitars, reqElectricsGuitars } from "./assets/req";
 
 
 const App = () => {
@@ -20,14 +22,34 @@ const App = () => {
         <>
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/guitares-electriques' element={<Electriques />}/>
-            <Route path='/guitares-electriques/:id' element={<Electrique />}/>
+            <Route 
+                path='/guitares-electriques' 
+                element={<MainCategorie 
+                    title="Guitare Electriques" 
+                    req={reqElectricsGuitars}
+                    listFilters={ElectricFilters}
+                />}
+            />
+            <Route 
+                path='/guitares-electriques/:id' 
+                element={<Article 
+                    title="Guitare Electriques" 
+                    req={reqElectricsGuitars}
+                />}
+            />
                 
-            <Route path='/guitares-acoustiques' element={<Acoustiques />}/>
+            <Route 
+                path='/guitares-acoustiques'
+                element={<MainCategorie 
+                    title="Guitare Electriques" 
+                    req={reqAcousticsGuitars}
+                    listFilters={AcousticFilters}
+                />} 
+            />
 
-            <Route path='/accessoires' element={<Accessoires />}/>
+            {/* <Route path='/accessoires' element={<Accessoires />}/>
 
-            <Route path='/amplis' element={<Amplis />}/>
+            <Route path='/amplis' element={<Amplis />}/> */}
             
             <Route path='/cart' element={<Cart />}/>
         </Routes>

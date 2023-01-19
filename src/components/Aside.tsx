@@ -4,6 +4,7 @@ import { ICONS } from "../assets/constants";
 import { useSelector } from "react-redux";
 
 interface Props {
+    listFilters: string[],
     filterStyleSelected: string | null,
     setFilterStyleSelected: (v: string | null) => void,
     filterPrice: FilterPrice,
@@ -11,13 +12,14 @@ interface Props {
 }
 
 const Aside = ({
+    listFilters,
     filterStyleSelected,
     setFilterStyleSelected,
     filterPrice,
     setFilterPrice
 }: Props) => {
 
-    const styles: string[] = useSelector((state: any) => state.filterList)
+    //const styles: string[] = useSelector((state: any) => state.filterList)
     const [isSticky, setIsSticky] = useState(false)
     const [isSmall, setIsSmall] = useState(false)
     const [isTel, setIsTel] = useState(false)
@@ -91,7 +93,7 @@ const Aside = ({
                     <p>Styles :</p>
                     <ul>
                         {
-                            styles && styles.map(style => (
+                            listFilters && listFilters.map(style => (
                                 <li key={style}>
                                     <input 
                                         type="radio" 
@@ -111,8 +113,6 @@ const Aside = ({
                                 onClick={() => setFilterStyleSelected(null)}
                             > tous les styles </button> }
                     </ul>
-
-
                 </form>
             </div>
             : 

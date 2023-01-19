@@ -9,6 +9,7 @@ const MockAside = () => {
     return (
         <Provider store={store}>
             <Aside 
+                listFilters={[""]}
                 filterStyleSelected=""
                 setFilterStyleSelected={()=>{}}
                 filterPrice={{min: 0, max: 0}}
