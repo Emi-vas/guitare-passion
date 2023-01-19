@@ -46,6 +46,13 @@ const App = () => {
                     listFilters={AcousticFilters}
                 />} 
             />
+            <Route 
+                path='/guitares-acoustiques/:id' 
+                element={<Article 
+                    title="Guitare Acoustiques" 
+                    req={reqAcousticsGuitars}
+                />}
+            />
 
             {/* <Route path='/accessoires' element={<Accessoires />}/>
 

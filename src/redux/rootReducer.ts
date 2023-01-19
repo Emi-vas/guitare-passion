@@ -4,7 +4,7 @@ import { filterReducer } from "./filter/filter.reducer";
 
 const rootReducer = combineReducers({
     cart: shoppingCartReducer,
-    filterList: filterReducer
+    filterList: filterReducer //useless
 })
 
 export default rootReducer

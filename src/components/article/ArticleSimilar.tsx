@@ -51,7 +51,7 @@ const ArticleSimilar = ({ data, articleRef }: Props) => {
             <h2>Articles similaires</h2>
             {
                 dataSimilar && dataSimilar.map((article) => (
-                    <ArticleCard article={article} key={article.id}/>
+                    <ArticleCard article={article} key={article.id} similar={true}/>
                 ))
             }
         </div>
