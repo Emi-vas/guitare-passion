@@ -14,6 +14,7 @@ const MockAside = () => {
                 setFilterStyleSelected={()=>{}}
                 filterPrice={{min: 0, max: 0}}
                 setFilterPrice={()=>{}}
+                page=''
             />
         </Provider>
     )

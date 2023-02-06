@@ -79,6 +79,7 @@ const MainCategorie = ({ title, req, listFilters }: Props) => {
                     setFilterStyleSelected={setFilterStyleSelected}
                     filterPrice={filterPrice}
                     setFilterPrice={setFilterPrice}
+                    page={title}
                 />
                 <div className='Categories listeArticles'>
                     {

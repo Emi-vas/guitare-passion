@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 import MainCategorie from "./pages/MainCategorie";
 import Article from "./pages/Article";
 //assets
-import { AcousticFilters, ElectricFilters } from "./assets/filters";
-import { reqAcousticsGuitars, reqElectricsGuitars } from "./assets/req";
+import { AcousticFilters, ElectricFilters, AmplisFilters } from "./assets/filters";
+import { reqAcousticsGuitars, reqElectricsGuitars, reqAmplis } from "./assets/req";
 
 
 const App = () => {
@@ -54,9 +54,16 @@ const App = () => {
                 />}
             />
 
-            {/* <Route path='/accessoires' element={<Accessoires />}/>
+            <Route 
+                path='/amplis' 
+                element={<MainCategorie 
+                    title="Amplis" 
+                    req={reqElectricsGuitars}
+                    listFilters={AmplisFilters}
+                />}
+            />
 
-            <Route path='/amplis' element={<Amplis />}/> */}
+            {/* <Route path='/accessoires' element={<Accessoires />}/>*/}
             
             <Route path='/cart' element={<Cart />}/>
         </Routes>

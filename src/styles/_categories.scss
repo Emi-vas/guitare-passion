@@ -37,8 +37,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
     padding-bottom: 50px;
     flex: 1;
+    min-height: 75vh;
 }
 
 

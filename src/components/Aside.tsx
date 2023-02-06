@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { FilterPrice } from "../assets/types";
 import { ICONS } from "../assets/constants";
 import { useSelector } from "react-redux";
+import { title } from "process";
 
 interface Props {
     listFilters: string[],
     filterStyleSelected: string | null,
     setFilterStyleSelected: (v: string | null) => void,
     filterPrice: FilterPrice,
-    setFilterPrice: (v: FilterPrice) => void
+    setFilterPrice: (v: FilterPrice) => void,
+    page: string
 }
 
 const Aside = ({
@@ -16,7 +18,8 @@ const Aside = ({
     filterStyleSelected,
     setFilterStyleSelected,
     filterPrice,
-    setFilterPrice
+    setFilterPrice,
+    page
 }: Props) => {
 
     //const styles: string[] = useSelector((state: any) => state.filterList)
@@ -90,7 +93,9 @@ const Aside = ({
                                 }}
                             />
                     </div>
-                    <p>Styles :</p>
+                    <p>
+                        {page != "Amplis" ? "Styles :" : "Type :"}
+                    </p>
                     <ul>
                         {
                             listFilters && listFilters.map(style => (
@@ -111,7 +116,7 @@ const Aside = ({
                             <button 
                                 className="btn-1"
                                 onClick={() => setFilterStyleSelected(null)}
-                            > tous les styles </button> }
+                            > {page != "Amplis" ? "tous les styles" : "tous les types"} </button> }
                     </ul>
                 </form>
             </div>
