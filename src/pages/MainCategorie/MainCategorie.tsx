@@ -11,6 +11,7 @@ import { FilterPrice, Guitar } from '../../assets/types';
 
 //temp
 import { dataAcoustic } from '../../assets/acoustic';
+import { ampliData } from '../../assets/ampli';
 
 
 interface Props {
@@ -26,7 +27,7 @@ const MainCategorie = ({ title, req, listFilters }: Props) => {
     const [filterStyleSelected, setFilterStyleSelected] = useState<null | string>(null)
     const [filterPrice, setFilterPrice] = useState<FilterPrice>({min: null, max: null})
 
-    console.log(JSON.stringify(dataAcoustic))
+    console.log(JSON.stringify(ampliData))
 
     useEffect(()=>{
         axios.get(req).then((res: any)=> setData(res.data))

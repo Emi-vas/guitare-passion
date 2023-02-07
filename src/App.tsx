@@ -58,7 +58,7 @@ const App = () => {
                 path='/amplis' 
                 element={<MainCategorie 
                     title="Amplis" 
-                    req={reqElectricsGuitars}
+                    req={reqAmplis}
                     listFilters={AmplisFilters}
                 />}
             />
