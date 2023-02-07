@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { dataElectrics } from '../../assets/electric';
 import { Guitar } from '../../assets/types';
 import useIsInCart from '../../hooks/useIsInCart';
 import { addToCart, removeToCart } from '../../redux/shoppingCart/shoppingCart.actions';
 import RateStars from '../RateStars';
 import ArticleCara from './ArticleCara';
 import { ICONS } from '../../assets/constants';
+import ArticleCaraAmpli from './ArticleCaraAmpli';
 interface Props {
     articleData: Guitar
+    title: string
 }
 
-const ArticleMain = ({ articleData }: Props) => {
+const ArticleMain = ({ articleData, title }: Props) => {
     const dispatch = useDispatch()
     const isInCart = useIsInCart(articleData)
 
@@ -24,7 +25,13 @@ const ArticleMain = ({ articleData }: Props) => {
                     <img src={'/images/articles/' + articleData.img} alt={articleData.name} />
                 </div>
                 <div className='blocRate'>
-                    <ArticleCara dataCara={articleData.cara} dataStyles={articleData.style}/>
+                    {
+                        title == "Amplis" ? 
+                        <ArticleCaraAmpli dataCara={articleData.cara} dataStyles={articleData.style} />
+                        : 
+                        <ArticleCara dataCara={articleData.cara} dataStyles={articleData.style}/>
+                    }
+                    
                     <div className='stars'>
                         <h2>Note globale</h2>
                         <RateStars rate={articleData.rate} />

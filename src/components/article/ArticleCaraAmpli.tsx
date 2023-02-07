@@ -3,15 +3,14 @@ import React, {useEffect, useState} from 'react';
 interface Props {
     dataCara: {
         sound: number,
-        maneuverability?: number,
+        puissance?: number,
         polyvalence: number
     }
     dataStyles: string[]
 }
 
-const ArticleCara = ({ dataCara, dataStyles }: Props) => {
+const ArticleCaraAmpli = ({ dataCara, dataStyles }: Props) => {
     const [animSound, setAnimSound] = useState('')
-    const [animMan, setAnimMan] = useState('')
     const [animPoly, setAnimPoly] = useState('')
 
     useEffect(() => {
@@ -19,14 +18,11 @@ const ArticleCara = ({ dataCara, dataStyles }: Props) => {
             setAnimSound(`translateX(${dataCara.sound * 100 / 5}%)`)
         }, 100)
         setTimeout(() => {
-            if(dataCara.maneuverability) {
-                setAnimMan(`translateX(${dataCara.maneuverability * 100 / 5}%)`)
-            }
-        }, 300)
-        setTimeout(() => {
             setAnimPoly(`translateX(${dataCara.polyvalence * 100 / 5}%)`)
-        }, 500)
+        }, 300)
     },[dataCara])
+
+    console.log(dataCara.sound)
 
     return (
         <div className='blocCara'>
@@ -38,20 +34,16 @@ const ArticleCara = ({ dataCara, dataStyles }: Props) => {
                 ></div>
             </div>
 
-            <p>Maniabilité</p>
-            <div className='rate'>
-                <div 
-                    className='rate-after'
-                    style={{ transform: animMan }}
-                ></div>
-            </div>
-
             <p>Polyvalence</p>
             <div className='rate'>
                 <div 
                     className='rate-after'
                     style={{ transform: animPoly }}
                 ></div>
+            </div>
+            <p>Puissance</p>
+            <div className='puissance'>
+                <p>{dataCara.puissance} <span>Watts</span></p>
             </div>
             <p>Styles</p>
             <div className='styles'>
@@ -67,4 +59,4 @@ const ArticleCara = ({ dataCara, dataStyles }: Props) => {
     )
 };
 
-export default ArticleCara;
+export default ArticleCaraAmpli;

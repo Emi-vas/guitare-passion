@@ -9,7 +9,7 @@ export const ampliData = [
         img: "31.png",
         cara: {
             polyvalence: 5,
-            son: 3,
+            sound: 3,
             puissance: 40
         },
         style: ["modélisation"],
@@ -24,7 +24,7 @@ export const ampliData = [
         img: "32.png",
         cara: {
             polyvalence: 5,
-            son: 3,
+            sound: 3,
             puissance: 100
         },
         style: ["modélisation"],
@@ -39,7 +39,7 @@ export const ampliData = [
         img: "33.png",
         cara: {
             polyvalence: 5,
-            son: 4,
+            sound: 4,
             puissance: 100
         },
         style: ["modélisation"],
@@ -54,7 +54,7 @@ export const ampliData = [
         img: "34.png",
         cara: {
             polyvalence: 3,
-            son: 4,
+            sound: 4,
             puissance: 15
         },
         style: ["transistores"],
@@ -69,7 +69,7 @@ export const ampliData = [
         img: "35.png",
         cara: {
             polyvalence: 3,
-            son: 5,
+            sound: 5,
             puissance: 35
         },
         style: ["transistores"],

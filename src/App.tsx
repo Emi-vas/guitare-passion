@@ -62,6 +62,14 @@ const App = () => {
                     listFilters={AmplisFilters}
                 />}
             />
+            <Route 
+                path='/amplis/:id' 
+                element={<Article 
+                    title="Amplis" 
+                    req={reqAmplis}
+                />}
+            />
+
 
             {/* <Route path='/accessoires' element={<Accessoires />}/>*/}
             

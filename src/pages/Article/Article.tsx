@@ -34,7 +34,7 @@ const Article = ({ title, req }: Props) => {
         <div>
             <TopSection title='Guitares électriques'/>
             {
-                articleData && <ArticleMain articleData={articleData} />
+                articleData && <ArticleMain articleData={articleData} title={title} />
             }
             {
                 data && articleData &&

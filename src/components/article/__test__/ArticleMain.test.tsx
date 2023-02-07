@@ -26,7 +26,7 @@ const MookArticleMain = () =>  {
     return(
         <BrowserRouter>
             <Provider store={store}>
-                <ArticleMain articleData={data}/>
+                <ArticleMain articleData={data} title=""/>
             </Provider>
         </BrowserRouter>
     )

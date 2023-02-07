@@ -8,8 +8,9 @@ export type Guitar = {
     img: string,
     cara: {
         polyvalence: number,
-        maneuverability: number,
-        sound: number
+        maneuverability?: number,
+        sound: number,
+        puissance?: number
     },
     style: string[],
     desc: string,
