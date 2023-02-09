@@ -8,5 +8,7 @@ export const ICONS = {
     starEmpty: "fa-regular fa-star",
     cart: "fa-solid fa-cart-shopping",
     settings: "fa-solid fa-sliders",
-    backArrow: "fa-solid fa-arrow-left-long"
+    backArrow: "fa-solid fa-arrow-left-long",
+    circle: "fa-solid fa-o",
+    circleChecked: "fa-solid fa-burst"
 }

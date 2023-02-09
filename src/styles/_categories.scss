@@ -69,10 +69,18 @@
         padding: 5px;
     }
 
-    input, label {
-        cursor: pointer;
+    i {
+        margin-right: 3px;
+        color: $blue;
     }
 
+    input, label, i {
+        cursor: pointer;
+        &:hover {
+            color: $blue;
+        }
+    }
+    
     form {
         p {
             margin-bottom: 7px;

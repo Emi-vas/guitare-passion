@@ -107,8 +107,16 @@ const Aside = ({
                                         value={style}
                                         checked={filterStyleSelected == style}
                                         onChange={(e)=>setFilterStyleSelected(e.target.value)}
+                                        style={{ display: "none" }}
                                     />
-                                    <label htmlFor={style}>{ style }</label>
+                                    
+                                    <label htmlFor={style}> 
+                                        <i 
+                                            className={filterStyleSelected == style ? ICONS.circleChecked : ICONS.circle}
+                                        ></i> 
+                                        
+                                        { style }
+                                    </label>
                                 </li>
                             ))
                         }
