@@ -151,4 +151,79 @@ export const ampliData = [
         desc: "En 1959, la concurrence du puissant Fender Twin pousse Vox à produire un nouveau modèle, le Vox AC30 30-watts, à la demande de Hank Marvin des Shadows. Muni de haut-parleurs Goodmans et du circuit électrique spécial « Top Boost », il donne naissance au son caractéristique de British Invasion et sera utilisé par exemple par les Beatles, les Who… L'AC30 sera plus tard utilisé par Brian May du groupe Queen, Paul Weller de The Jam, Rory Gallagher, The Edge de U2 ou, en France en 1962 par James Fawler, plus tard par Louis Bertignac de Téléphone entre autres.",
         video: "https://www.youtube.com/embed/S_OqfNdvBpU"
     },
+    {
+        id: 41,
+        name: "Fender 64 Custom Princeton Reverb",
+        price: 2399,
+        rate: 5,
+        img: "41.png",
+        cara: {
+            polyvalence: 3,
+            sound: 5,
+            puissance: 12
+        },
+        style: ["lampes"],
+        desc: "En 1959, la concurrence du puissant Fender Twin pousse Vox à produire un nouveau modèle, le Vox AC30 30-watts, à la demande de Hank Marvin des Shadows. Muni de haut-parleurs Goodmans et du circuit électrique spécial « Top Boost », il donne naissance au son caractéristique de British Invasion et sera utilisé par exemple par les Beatles, les Who… L'AC30 sera plus tard utilisé par Brian May du groupe Queen, Paul Weller de The Jam, Rory Gallagher, The Edge de U2 ou, en France en 1962 par James Fawler, plus tard par Louis Bertignac de Téléphone entre autres.",
+        video: "https://www.youtube.com/embed/ipUDu_MUpQE"
+    },
+    {
+        id: 42,
+        name: "Fender Tone Master Super Reverb",
+        price: 1333,
+        rate: 5,
+        img: "42.png",
+        cara: {
+            polyvalence: 3,
+            sound: 5,
+            puissance: 200
+        },
+        style: ["lampes"],
+        desc: "En 1959, la concurrence du puissant Fender Twin pousse Vox à produire un nouveau modèle, le Vox AC30 30-watts, à la demande de Hank Marvin des Shadows. Muni de haut-parleurs Goodmans et du circuit électrique spécial « Top Boost », il donne naissance au son caractéristique de British Invasion et sera utilisé par exemple par les Beatles, les Who… L'AC30 sera plus tard utilisé par Brian May du groupe Queen, Paul Weller de The Jam, Rory Gallagher, The Edge de U2 ou, en France en 1962 par James Fawler, plus tard par Louis Bertignac de Téléphone entre autres.",
+        video: "https://www.youtube.com/embed/D6N-2SNkmEg"
+    },
+    {
+        id: 43,
+        name: "Marshall JVM410C",
+        price: 1679,
+        rate: 5,
+        img: "43.png",
+        cara: {
+            polyvalence: 4,
+            sound: 5,
+            puissance: 100
+        },
+        style: ["lampes"],
+        desc: "Le son Marshall dans les années 1960 a été popularisé par trois artistes majeurs de l'époque : les Who, Jimi Hendrix, et Eric Clapton lorsqu'il jouait avec les Bluesbreakers de John Mayall. Ce son si puissant fit beaucoup d'admirateurs et d'autres guitaristes tel que Jimmy Page de Led Zeppelin jouèrent sur ces amplificateurs.",
+        video: "https://www.youtube.com/embed/ZD4DXayEv4U"
+    },
+    {
+        id: 44,
+        name: "Marshall JVM215C",
+        price: 1329,
+        rate: 5,
+        img: "44.png",
+        cara: {
+            polyvalence: 4,
+            sound: 5,
+            puissance: 50
+        },
+        style: ["lampes"],
+        desc: "Le son Marshall dans les années 1960 a été popularisé par trois artistes majeurs de l'époque : les Who, Jimi Hendrix, et Eric Clapton lorsqu'il jouait avec les Bluesbreakers de John Mayall. Ce son si puissant fit beaucoup d'admirateurs et d'autres guitaristes tel que Jimmy Page de Led Zeppelin jouèrent sur ces amplificateurs.",
+        video: "https://www.youtube.com/embed/VRtWxRXne0M"
+    },
+    {
+        id: 45,
+        name: "Vox AC15 C1X",
+        price: 1099,
+        rate: 5,
+        img: "45.png",
+        cara: {
+            polyvalence: 3,
+            sound: 5,
+            puissance: 50
+        },
+        style: ["lampes"],
+        desc: "En 1959, la concurrence du puissant Fender Twin pousse Vox à produire un nouveau modèle, le Vox AC30 30-watts, à la demande de Hank Marvin des Shadows. Muni de haut-parleurs Goodmans et du circuit électrique spécial « Top Boost », il donne naissance au son caractéristique de British Invasion et sera utilisé par exemple par les Beatles, les Who… L'AC30 sera plus tard utilisé par Brian May du groupe Queen, Paul Weller de The Jam, Rory Gallagher, The Edge de U2 ou, en France en 1962 par James Fawler, plus tard par Louis Bertignac de Téléphone entre autres.",
+        video: "https://www.youtube.com/embed/dN1lkmi_u7I"
+    },
 ]
