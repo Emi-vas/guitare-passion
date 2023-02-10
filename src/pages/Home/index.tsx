@@ -42,11 +42,12 @@ const Guide = () => {
                     Un outil pour vous aider <br />
                     à choisir votre première guitare
                 </p>
-                <button 
+                <Link 
+                    to={"/guide"}
                     className=" btn btn-1"
                     onMouseEnter={()=> setAnimTitle(translateTitle)}
                     onMouseLeave={()=> setAnimTitle("translateX(0)")}
-                >Suivre le guide</button>
+                >Suivre le guide</Link>
             </div>
         </div>
     )

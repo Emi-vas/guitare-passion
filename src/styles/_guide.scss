@@ -1,0 +1,106 @@
+.guide_page {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        animation: arrive2 0.5s both;
+    }
+    h2 {
+        font-size: 1.7em;
+        background: $orange;
+        color: white;
+        padding: 10px;
+        border-radius: 30px;
+    }
+    input {
+        font-size: 1.7em;
+        width: 90px;
+        border: 1px rgba(128, 128, 128, 0.444) solid;
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+}
+
+//------HOME PAGE ____ //
+.guideHome_bloc {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+   
+}
+
+.guideHome_cate {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px;
+    border-radius: 20px;
+
+    img {
+        width: 200px;
+        transition: all 0.3s;
+    }
+    p {
+        font-size: 1.2em;
+        font-family: $h1;
+        font-weight: 900;
+    }
+    &:hover {
+        background: $orange-bg;
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+
+.guide_like3 {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+
+    & .elem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        background: $orange;
+        padding: 10px;
+        border-radius: 20px;
+        width: 150px;
+        margin: 0 20px;
+        cursor: pointer;
+
+        i {
+            font-size: 1.5em;
+        }
+        &:hover {
+            box-shadow: rgba(128, 128, 128, 0.651) 3px 3px 3px;
+        }
+    }
+    & .elem:first-of-type {
+        background: rgb(182, 69, 69);
+    }
+    & .elem:last-of-type {
+        background: rgb(26, 178, 46);
+    }
+}
+
+.guide_warning {
+    p {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        background: $blue;
+        color: white;
+        padding: 5px;
+        border-radius: 20px;
+    }
+}

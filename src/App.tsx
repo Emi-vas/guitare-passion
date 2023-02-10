@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
 import MainCategorie from "./pages/MainCategorie";
 import Article from "./pages/Article";
+import Guide from "./pages/Guide";
 //assets
 import { AcousticFilters, ElectricFilters, AmplisFilters } from "./assets/filters";
 import { reqAcousticsGuitars, reqElectricsGuitars, reqAmplis } from "./assets/req";
@@ -70,6 +71,10 @@ const App = () => {
                 />}
             />
 
+            <Route 
+                path='/guide' 
+                element={<Guide/>}
+            />
 
             {/* <Route path='/accessoires' element={<Accessoires />}/>*/}
             

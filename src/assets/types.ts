@@ -29,3 +29,13 @@ export type FilterPrice = {
     min: null | number,
     max: null | number
 }
+
+export type GuideAcoustic = {
+    price: number,
+    beginner: boolean,
+    child: boolean,
+    classic: number,
+    pop: number,
+    flamenco: number,
+    rock: number
+}

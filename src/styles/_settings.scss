@@ -78,6 +78,13 @@ input {
     font-size: inherit;
 }
 
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn {
     font-family: $p;
     border: none;

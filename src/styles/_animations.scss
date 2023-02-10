@@ -9,3 +9,11 @@
         transform: translateX(0) scale(1);
     }
 }
+@keyframes arrive2 {
+    0% {
+        transform: translateX(-200px) ;
+    }
+    100%{
+        transform: translateX(0) ;
+    }
+}

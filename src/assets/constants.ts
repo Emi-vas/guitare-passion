@@ -10,5 +10,8 @@ export const ICONS = {
     settings: "fa-solid fa-sliders",
     backArrow: "fa-solid fa-arrow-left-long",
     circle: "fa-solid fa-o",
-    circleChecked: "fa-solid fa-burst"
+    circleChecked: "fa-solid fa-burst",
+    faceNon: "fa-solid fa-face-meh",
+    faceLike: "fa-solid fa-face-smile-beam",
+    faceLove: "fa-solid fa-face-grin-hearts"
 }
