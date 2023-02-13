@@ -62,7 +62,7 @@ const HeaderBloc = ({ setDisplayHeader, disableCart }: PropsHeaderBloc) => {
                     <Link to="/amplis" >Amplis</Link>
                 </div>
                 <div className="blocLien">
-                    <Link to="/accessoires" >Accessoires</Link>
+                    <Link to="/guide" style={{ color: "#ffd181" }} >Guide</Link>
                 </div>
             </nav>
 

@@ -1,5 +1,5 @@
 //react
-import { useState } from "react"
+import { useEffect, useState } from "react"
 //types
 import { GuideAcoustic } from "../../assets/types"
 
@@ -12,6 +12,23 @@ interface Props {
 
 const StepPrice = ({ setStep, userInfo, setUserInfo}: Props) => {
     const [priceIsValide, setPriceIsValide] = useState(false)
+
+    //handle press Enter
+    const handleKeyDown = (event: any) => {
+        if(event.keyCode == 13) {
+            if(priceIsValide) {
+                setStep(2)
+            }
+        }
+      };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+        // cleanup this component
+        return () => {
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+    },[priceIsValide])
 
     return (
         <div className="center guide_tarif">
