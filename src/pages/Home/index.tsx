@@ -73,7 +73,7 @@ const Categories = () => {
         {
             name: 'Accessoires',
             img: "./images/cate-accessoires.jpg",
-            link: "/accessoires"
+            link: "/amplis"
         },
     ]
 
