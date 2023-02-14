@@ -14,3 +14,10 @@ export const removeToCart = (item: Guitar) => {
         payload: item
     }
 }
+
+export const setCart = (item: Guitar[]) => {
+    return {
+        type: actionType.SET_CART,
+        payload: item
+    }
+}

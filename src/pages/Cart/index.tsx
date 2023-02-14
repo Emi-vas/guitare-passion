@@ -1,8 +1,12 @@
+//React
 import React, { useEffect, useState } from 'react';
+//redux
 import { useSelector } from 'react-redux';
+//Compo
 import TopSection from '../../components/TopSection';
-import { Store, GuitarInCart } from '../../assets/types';
 import CartItem from '../../components/CartItem';
+//Types
+import { Store, GuitarInCart } from '../../assets/types';
 
 const Cart = () => {
     const cart = useSelector((store: Store ) => store.cart.cart )
@@ -12,6 +16,7 @@ const Cart = () => {
         let totalTemp = 0
         cart.forEach((c: GuitarInCart) => totalTemp = totalTemp + (c.price * c.qte))
         setTotal(totalTemp)
+
     },[cart])
 
     return (

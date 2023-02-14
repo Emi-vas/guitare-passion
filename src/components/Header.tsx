@@ -1,7 +1,12 @@
+//React
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom"
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { setCart } from "../redux/shoppingCart/shoppingCart.actions";
+//assets
 import { ICONS } from "../assets/constants";
+//types
 import { GuitarInCart, Store } from "../assets/types";
 
 interface Props {
@@ -37,8 +42,18 @@ interface PropsHeaderBloc {
 }
 
 const HeaderBloc = ({ setDisplayHeader, disableCart }: PropsHeaderBloc) => {
+    const dispatch = useDispatch()
     const cart = useSelector((store: Store) => store.cart.cart)
     const [cartQte, setCartQte] = useState(0)
+
+    useEffect(() => {
+        if(cart[0]) return 
+        // get cart on storage
+        let cartStorageJ = localStorage.getItem('cart')
+        if(cartStorageJ == null) return
+        const cartStorage = JSON.parse(cartStorageJ)
+        dispatch(setCart(cartStorage))
+    },[])
 
     useEffect(() => {
         let qte = 0
@@ -46,6 +61,8 @@ const HeaderBloc = ({ setDisplayHeader, disableCart }: PropsHeaderBloc) => {
             cart.forEach((c: GuitarInCart) =>  qte = qte + (1 * c.qte))
         }
         setCartQte(qte)
+        //put cart on storage
+        localStorage.setItem('cart', JSON.stringify(cart))
     },[cart])
 
     return (

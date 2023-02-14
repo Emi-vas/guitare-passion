@@ -65,7 +65,7 @@ const Result = ({ userInfo, req }: Props) => {
     },[data])
 
     return (
-        <div>
+        <div className="guideResult">
             <h1>
                 Nous avons trouvé {guitarFound.length} guitares qui 
                     { guitarFound.length > 1 ? " peuvent " : " peut " }

@@ -1,5 +1,8 @@
 //react
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+//constant
+import { ICONS } from '../../assets/constants';
 //compo
 import AcousticGuide from './AcousticGuide';
 
@@ -8,6 +11,10 @@ const Guide = () => {
 
     return (
         <div className='guide_page'>
+            <Link to={"/guitares-electriques"} className="close">
+                <i className={ICONS.cross}></i>
+                Fermer le guide
+            </Link>
             { typeSelected == "none" && <Home setTypeSelected={setTypeSelected} />}
             { typeSelected == "acoustic" && <AcousticGuide />}
         </div>

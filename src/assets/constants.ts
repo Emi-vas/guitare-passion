@@ -13,5 +13,6 @@ export const ICONS = {
     circleChecked: "fa-solid fa-burst",
     faceNon: "fa-solid fa-face-meh",
     faceLike: "fa-solid fa-face-smile-beam",
-    faceLove: "fa-solid fa-face-grin-hearts"
+    faceLove: "fa-solid fa-face-grin-hearts",
+    cross: "fa-solid fa-xmark"
 }

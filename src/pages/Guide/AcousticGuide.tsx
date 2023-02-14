@@ -23,7 +23,7 @@ const AcousticGuide = () => {
     })
 
     return (
-        <div>
+        <div >
             { step == 1 && <StepPrice setStep={setStep} userInfo={userInfo} setUserInfo={setUserInfo} /> }
             { step == 2 && <StepStyle data={styleClassic} setStep={setStep} step={step} userInfo={userInfo} setUserInfo={setUserInfo}/> }
             { step == 3 && <StepStyle data={stylePop} setStep={setStep} step={step} userInfo={userInfo} setUserInfo={setUserInfo}/> }
@@ -57,7 +57,7 @@ const StepStyle = ({setStep, userInfo, setUserInfo, data, step}: PropsStepStyle)
     return (
         <div className="center">
             <h2>{data?.name}</h2>
-            <iframe width="720" height="400" src={data?.urlVideo} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
+            <iframe  src={data?.urlVideo} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
             </iframe>
             <h1>Avez vous envie de jouer ce style ?</h1>
             <div className="guide_like3">
@@ -67,7 +67,7 @@ const StepStyle = ({setStep, userInfo, setUserInfo, data, step}: PropsStepStyle)
                 </div>
                 <div className="elem" onClick={()=>handleClick(1)}>
                     <i className={ICONS.faceLike}></i>
-                    <p>Oui j'aime bien</p>
+                    <p>J'aime bien</p>
                 </div>
                 <div className="elem" onClick={()=>handleClick(2)}>
                     <i className={ICONS.faceLove}></i>

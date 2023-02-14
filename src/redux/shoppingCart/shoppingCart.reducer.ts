@@ -39,10 +39,16 @@ const shoppingCartReducer = (state: shoppingCart = shoppingCartInitialState, act
                     )
                 }
              }
+
              return {
                 ...state,
                 cart: state.cart.filter((c: GuitarInCart) => c.id != item.id)
              }
+        case actionTypes.SET_CART:
+            return {
+                ...state,
+                cart: action.payload
+            }
         default:
             return state
     }
