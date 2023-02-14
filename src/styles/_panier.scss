@@ -141,6 +141,15 @@
         margin: 20px 0;
     }
 
+    p {
+        max-width: 300px;
+        text-align: center;
+        font-size: 0.9em;
+        strong {
+            color: $blue;
+        }
+    }
+
     @media screen and (max-width: 1000px) {
         transform: translateY(0);
         margin: 50px 0;

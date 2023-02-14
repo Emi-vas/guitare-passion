@@ -47,6 +47,7 @@ interface PropsCheckout {
 }
 
 const Checkout = ({total}: PropsCheckout) => {
+    const [sellMessage, setSellMessage] = useState(false)
 
     return(
         <div className='checkout'>
@@ -54,7 +55,15 @@ const Checkout = ({total}: PropsCheckout) => {
             <div className='total'>
                 {total.toLocaleString()} €
             </div>
-            <button className='btn-1'>Procéder au payment</button>
+            <button className='btn-1' onClick={()=>setSellMessage(true)}>Procéder au payment</button>
+            {
+                sellMessage && 
+                <p>
+                    Ce site étant un site vitrine pour mon portfolio, il n'est pas possible d'acheter les guitares. <br />
+                    Ce sont cependant de vraies guitares qui sont disponibles sur 
+                    <a href="https://www.thomann.de/fr/guitares_basses.html" target="_blank"><strong> Thomann</strong></a>
+                </p>
+            }
         </div>
     )
 }

@@ -1,4 +1,1 @@
-- panier dans le storage
 - message au payment
-
--modif css page accueuil
