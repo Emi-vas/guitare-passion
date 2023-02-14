@@ -1,4 +1,8 @@
 .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     padding: 20px 0;
     background: $blue-dark;
     h2 {
@@ -6,5 +10,16 @@
         margin: 0;
         padding: 0;
         color: white;
+    }
+    a {
+        font-family: $h1;
+        margin: 10px;
+        color: white;
+        font-size: 1.1em;
+    }
+    p {
+        margin: 5px;
+        font-size: 0.8em;
+        color: rgb(149, 193, 242);
     }
 }
