@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <h2>Guitare Passion</h2>
-            <a href="">Portfolio</a>
+            <a href="https://app.underdom.fr/">Portfolio</a>
             <p>Développer par Emilien Vaschalde</p>
         </div>
     );
