@@ -7,6 +7,7 @@ interface Props {
 }
 
 const TopSection = ({ title, disableCart }: Props) => {
+    console.log(title)
     return (
         <div>
             <Header disableCart={disableCart} />

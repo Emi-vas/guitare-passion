@@ -32,7 +32,7 @@ const Article = ({ title, req }: Props) => {
 
     return (
         <div>
-            <TopSection title='Guitares électriques'/>
+            <TopSection title={title}/>
             {
                 articleData && <ArticleMain articleData={articleData} title={title} />
             }

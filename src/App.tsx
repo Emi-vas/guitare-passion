@@ -26,7 +26,7 @@ const App = () => {
             <Route 
                 path='/guitares-electriques' 
                 element={<MainCategorie 
-                    title="Guitare Electriques" 
+                    title="Guitares Electriques" 
                     req={reqElectricsGuitars}
                     listFilters={ElectricFilters}
                 />}
@@ -34,7 +34,7 @@ const App = () => {
             <Route 
                 path='/guitares-electriques/:id' 
                 element={<Article 
-                    title="Guitare Electriques" 
+                    title="Guitares Electriques" 
                     req={reqElectricsGuitars}
                 />}
             />
@@ -42,7 +42,7 @@ const App = () => {
             <Route 
                 path='/guitares-acoustiques'
                 element={<MainCategorie 
-                    title="Guitare Electriques" 
+                    title="Guitares Acoustiques" 
                     req={reqAcousticsGuitars}
                     listFilters={AcousticFilters}
                 />} 
@@ -50,7 +50,7 @@ const App = () => {
             <Route 
                 path='/guitares-acoustiques/:id' 
                 element={<Article 
-                    title="Guitare Acoustiques" 
+                    title="Guitares Acoustiques" 
                     req={reqAcousticsGuitars}
                 />}
             />

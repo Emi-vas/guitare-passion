@@ -27,8 +27,6 @@ const MainCategorie = ({ title, req, listFilters }: Props) => {
     const [filterStyleSelected, setFilterStyleSelected] = useState<null | string>(null)
     const [filterPrice, setFilterPrice] = useState<FilterPrice>({min: null, max: null})
 
-    console.log(JSON.stringify(ampliData))
-
     useEffect(()=>{
         axios.get(req).then((res: any)=> setData(res.data))
         setFilterStyleSelected(null)
