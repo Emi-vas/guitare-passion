@@ -22,4 +22,9 @@
         font-size: 0.8em;
         color: rgb(149, 193, 242);
     }
+
+    @media screen and (max-width: 700px){
+        font-size: 0.8em;
+        padding-top: 90px;
+    }
 }
